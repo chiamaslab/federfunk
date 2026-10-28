@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "title": "Reviewed bird-only adaptations requested 2026-10-27",
+  "source_pack": "fugleramme-north-america-reviewed",
+  "source_revision": "4c41f772a0574e4348f6ff722b1acf97d536fc8b",
+  "rights": "CC BY-SA 4.0",
+  "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "assets": [
+    {
+      "id": "fugleramme-na-certhia-americana",
+      "scientific_name": "Certhia americana",
+      "file": "edits/brown-creeper-bird-only.png",
+      "source_sha256": "4734016e947394205de863d13b414423f41c1204c7e9c8841d270069c739e8ac",
+      "source_pixel_sha256": "249577b4654202af1d97205b151b32e110583c53b9b8ba9fae4689e2d0f48487",
+      "sha256": "17af6f733b5398bdbe7d2a32807614365421d34dcd0d395ab6d76ba849fb78e6",
+      "pixel_sha256": "62f52cbe0103cf2731947417b1053462c62b7f0abcdc924b5422f92ce2b12323",
+      "width": 943,
+      "height": 1668,
+      "variant": "Historical illustration · bird only (edited)",
+      "editor_credit": "FederFunk / chiamaslab: AI-assisted background and support removal using OpenAI image editing, 2026-10-27; adapted image remains CC BY-SA 4.0.",
+      "changes": "Derived from the credited Fugleramme historical cutout. 2026-10-27: AI-assisted removal of perch/ground, paper and surrounding scenery at the owner's request; foreground male isolated for the pheasant. Original pose and recognizable plumage guided the edit. The image tool can resample/recreate edge details; this is an edited adaptation, not a pixel-identical historical crop. Original upstream source remains preserved. Adaptation: CC BY-SA 4.0.",
+      "edit_prompt": "Use case: precise-object-edit. Edit target: the provided historical Brown Creeper illustration. Remove the ENTIRE tree trunk and all branches, twigs, moss, ground and pale paper/background. Retain ONLY the single Brown Creeper bird on genuine transparent alpha. Preserve its exact original head-up climbing pose, left/up-pointing long curved bill, eye, brown and cream speckled plumage, folded wings, long pointed brown tail, and visible legs, toes and claws. Keep the historical printed illustration appearance, pigment colors, proportions and feather patterns as close to the input as possible. Where the toes gripped the tree, remove the wood without adding wood-colored halos; retain the existing toe shapes, do not invent new limbs or alter the bird's pose. Keep entire bill, claws and tail in frame with small transparent padding. No text, shadows, paper, perch or added object.",
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-27",
+        "species_check": "Compared the edited bird with the same pinned historical source figure and the source catalogue's scientific-name mapping; no other species is substituted.",
+        "orientation": "Single Brown Creeper in the original head-up climbing pose; curved bill points upper-left, folded wings, long pointed tail and visible gripping toes are retained.",
+        "crop": "Entire trunk, branches, moss and paper removed. Exactly one bird remains on transparent alpha; bill, toes and tail inspected at full size.",
+        "scope": "Inspected the complete transparent output at full size against the input historical cutout. AI-assisted cleanup is explicitly disclosed; source pigment identity and scientifically reconstructed hidden anatomy are not claimed.",
+        "reviewed_source_sha256": "4734016e947394205de863d13b414423f41c1204c7e9c8841d270069c739e8ac",
+        "reviewed_pixel_sha256": "62f52cbe0103cf2731947417b1053462c62b7f0abcdc924b5422f92ce2b12323",
+        "reviewed_sha256": "17af6f733b5398bdbe7d2a32807614365421d34dcd0d395ab6d76ba849fb78e6"
+      }
+    },
+    {
+      "id": "fugleramme-na-anser-albifrons-2",
+      "scientific_name": "Anser albifrons",
+      "file": "edits/greater-white-fronted-goose-bird-only.png",
+      "source_sha256": "393886696111e438f148d80377124fb5f88651af3470a2344e246491f678f4b9",
+      "source_pixel_sha256": "fe1a9c5ea63ba9ec65fb837d58e53503a2cf2423d7eafd9d0ed0736a6f771a8c",
+      "sha256": "ce1c860795daab7506f13d6937d69fa3611b1f433c71f23384436f7e6f674b50",
+      "pixel_sha256": "45e8e830c346c4b8b6c14eae1355779095ecd97ae246f7b7e2302df62046879c",
+      "width": 1331,
+      "height": 1182,
+      "variant": "Historical illustration · bird only (edited)",
+      "editor_credit": "FederFunk / chiamaslab: AI-assisted background and support removal using OpenAI image editing, 2026-10-27; adapted image remains CC BY-SA 4.0.",
+      "changes": "Derived from the credited Fugleramme historical cutout. 2026-10-27: AI-assisted removal of perch/ground, paper and surrounding scenery at the owner's request; foreground male isolated for the pheasant. Original pose and recognizable plumage guided the edit. The image tool can resample/recreate edge details; this is an edited adaptation, not a pixel-identical historical crop. Original upstream source remains preserved. Adaptation: CC BY-SA 4.0.",
+      "edit_prompt": "Use case: precise-object-edit. Edit target: the supplied historical Greater White-fronted Goose illustration. Remove all rocks, ground, grass, the signature and pale paper halo/background, leaving ONLY the single goose on genuine transparent alpha. Preserve the exact original left-facing standing pose, head and eye, pale pink bill, white forehead patch, gray-brown neck, black belly bars, intricately scalloped folded wing, tail and BOTH orange webbed feet with existing toes and claws. Preserve the historical printed illustration appearance, original colors, anatomy and proportions. Do not change pose, redraw plumage, add missing anatomy or add a perch. Keep full bird in frame with small transparent padding. No text, ground, stone, shadow or background.",
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-27",
+        "species_check": "Compared the edited bird with the same pinned historical source figure and the source catalogue's scientific-name mapping; no other species is substituted.",
+        "orientation": "Single standing Greater White-fronted Goose, left-facing; pink bill, white forehead, barred belly, folded wings, tail and both orange webbed feet inspected.",
+        "crop": "Rock/ground patch, signature and paper halo removed. Exactly one bird remains on transparent alpha, including both visible feet.",
+        "scope": "Inspected the complete transparent output at full size against the input historical cutout. AI-assisted cleanup is explicitly disclosed; source pigment identity and scientifically reconstructed hidden anatomy are not claimed.",
+        "reviewed_source_sha256": "393886696111e438f148d80377124fb5f88651af3470a2344e246491f678f4b9",
+        "reviewed_pixel_sha256": "45e8e830c346c4b8b6c14eae1355779095ecd97ae246f7b7e2302df62046879c",
+        "reviewed_sha256": "ce1c860795daab7506f13d6937d69fa3611b1f433c71f23384436f7e6f674b50"
+      }
+    },
+    {
+      "id": "fugleramme-na-phasianus-colchicus",
+      "scientific_name": "Phasianus colchicus",
+      "file": "edits/ring-necked-pheasant-bird-only.png",
+      "source_sha256": "72c7d4e9cf97cf1fcbd127872c946be249378db663e184270cc1614ebccc57c3",
+      "source_pixel_sha256": "bc52f370b396793d999da2d1389768db61a932c46a9c396e783720b7759323a3",
+      "sha256": "03a8d3f7df5757be9325dabe649d393dfabffc7093157473d38267ff1c58b523",
+      "pixel_sha256": "4fd68f89205744e1c19c87b2d353b7890c826aff68a26793a02c2ed5840fbeb3",
+      "width": 1597,
+      "height": 985,
+      "variant": "Historical illustration · bird only (edited)",
+      "editor_credit": "FederFunk / chiamaslab: AI-assisted background and support removal using OpenAI image editing, 2026-10-27; adapted image remains CC BY-SA 4.0.",
+      "changes": "Derived from the credited Fugleramme historical cutout. 2026-10-27: AI-assisted removal of perch/ground, paper and surrounding scenery at the owner's request; foreground male isolated for the pheasant. Original pose and recognizable plumage guided the edit. The image tool can resample/recreate edge details; this is an edited adaptation, not a pixel-identical historical crop. Original upstream source remains preserved. Adaptation: CC BY-SA 4.0.",
+      "edit_prompt": "Use case: precise-object-edit. Edit target: the supplied historical Ring-necked Pheasant illustration. Isolate ONLY the large colorful MALE pheasant in the FOREGROUND. Remove the entire tree stump/stick, branches, leaves, grasses, earth, paper halo/background and the smaller brown female bird behind him. Output the male bird alone on genuine transparent alpha. Preserve the exact original left-facing pose, crested green/blue head, red face skin, eye and bill, orange and copper plumage, folded wing, very long barred tail sweeping diagonally down-right, and the existing visible dark leg, toes and claws. Retain all male bird parts actually visible in the source; do not invent a second leg where it is hidden. Preserve historical printed illustration style, original colors, proportions and fine feather pattern as close to the input as possible. Keep entire tail, bill and visible claws within frame with small transparent padding. No text, added limbs, perch, ground, shadow or second bird.",
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-27",
+        "species_check": "Compared the edited bird with the same pinned historical source figure and the source catalogue's scientific-name mapping; no other species is substituted.",
+        "orientation": "Foreground male Ring-necked Pheasant, left-facing, with dark green head, red face, copper plumage, long barred tail and the visible dark leg/toes retained.",
+        "crop": "Tree stump, grasses, leaves, ground, paper and the background female removed. Exactly one male remains on transparent alpha. No new second leg is claimed; the source hides it.",
+        "scope": "Inspected the complete transparent output at full size against the input historical cutout. AI-assisted cleanup is explicitly disclosed; source pigment identity and scientifically reconstructed hidden anatomy are not claimed.",
+        "reviewed_source_sha256": "72c7d4e9cf97cf1fcbd127872c946be249378db663e184270cc1614ebccc57c3",
+        "reviewed_pixel_sha256": "4fd68f89205744e1c19c87b2d353b7890c826aff68a26793a02c2ed5840fbeb3",
+        "reviewed_sha256": "03a8d3f7df5757be9325dabe649d393dfabffc7093157473d38267ff1c58b523"
+      }
+    }
+  ]
+}

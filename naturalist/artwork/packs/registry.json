@@ -1,0 +1,1249 @@
+{
+  "schema_version": 1,
+  "packs": [
+    {
+      "id": "fugleramme-classic-reviewed",
+      "title": "Fugleramme · reviewed historical birds",
+      "revision": "33b943b41222b980f7bde913f3453028ea401fe7",
+      "source_url": "https://github.com/arnegiacomo/fugleramme/tree/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic",
+      "rights": "CC BY-SA 4.0",
+      "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+      "assets": [
+        {
+          "id": "fugleramme-chordeiles-minor",
+          "scientific_name": "Chordeiles minor",
+          "common_name": "Common Nighthawk",
+          "title": "Audubon · flying · Fugleramme",
+          "variant": "Audubon · flying",
+          "creator": "John James Audubon; Robert Havell",
+          "date": "1829–1838",
+          "source_url": "https://media.audubon.org/boa_illustration/plate-147-night-hawk.jpg",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/chordeiles-minor.webp",
+          "upstream_file": "assets/artwork/classic/birds/chordeiles-minor.webp",
+          "source_sha256": "5bfde0cd69cdf410d00490cd8eb58360a734b22ecc713bb4a9eda237d4f4c98d",
+          "pixel_sha256": "28e63b31ff7afa64b5f7817053e467a638724f7a46489cf3db01f1f35fbf053e",
+          "width": 1185,
+          "height": 1200,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "John James Audubon; Robert Havell; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Upper flying bird in Audubon plate 147, Night Hawk; both white wing bars, spread wings and fanned barred tail match the original.",
+            "orientation": "Original banking flight pose, head lower left.",
+            "crop": "Complete wings, bill and tail; no other bird or oak leaves in cutout. Pale perimeter halo retained.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "5bfde0cd69cdf410d00490cd8eb58360a734b22ecc713bb4a9eda237d4f4c98d",
+            "reviewed_pixel_sha256": "28e63b31ff7afa64b5f7817053e467a638724f7a46489cf3db01f1f35fbf053e"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "28e63b31ff7afa64b5f7817053e467a638724f7a46489cf3db01f1f35fbf053e",
+            "size": [
+              1185,
+              1200
+            ],
+            "polygons": [],
+            "exclude": [],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-corvus-corax",
+          "scientific_name": "Corvus corax",
+          "common_name": "Common Raven",
+          "title": "Gould · perched · Fugleramme",
+          "variant": "Gould · perched",
+          "creator": "John and Elizabeth Gould",
+          "date": "1832–1837",
+          "source_url": "https://digital.lib.ku.edu/ku-gould/10527",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/corvus-corax.webp",
+          "upstream_file": "assets/artwork/classic/birds/corvus-corax.webp",
+          "source_sha256": "cca170f93b16167e0f39a041308c3efd8576bd3c72acbf311fbcb0f5e61830eb",
+          "pixel_sha256": "c0dc86b227d5870b6e91c3eff903a8f640f10103230bc71488d317507d7c8df6",
+          "width": 908,
+          "height": 1200,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "John and Elizabeth Gould; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Source scan: University of Kansas Libraries. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Single Raven, Corvus corax, from Gould Birds of Europe plate 220; matched KU record and source plate.",
+            "orientation": "Original upright left-facing pose.",
+            "crop": "Bill, tail and visible toes complete; botanical sprigs, branch and pale halo retained; excluded from bird-area measurement.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "cca170f93b16167e0f39a041308c3efd8576bd3c72acbf311fbcb0f5e61830eb",
+            "reviewed_pixel_sha256": "c0dc86b227d5870b6e91c3eff903a8f640f10103230bc71488d317507d7c8df6"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "c0dc86b227d5870b6e91c3eff903a8f640f10103230bc71488d317507d7c8df6",
+            "size": [
+              908,
+              1200
+            ],
+            "polygons": [
+              [
+                [
+                  0,
+                  0.08
+                ],
+                [
+                  0.18,
+                  0.07
+                ],
+                [
+                  0.34,
+                  0.12
+                ],
+                [
+                  0.44,
+                  0.19
+                ],
+                [
+                  0.68,
+                  0.23
+                ],
+                [
+                  0.88,
+                  0.34
+                ],
+                [
+                  0.94,
+                  0.43
+                ],
+                [
+                  0.97,
+                  0.72
+                ],
+                [
+                  1,
+                  0.89
+                ],
+                [
+                  0.94,
+                  0.96
+                ],
+                [
+                  0.81,
+                  0.93
+                ],
+                [
+                  0.75,
+                  0.86
+                ],
+                [
+                  0.72,
+                  0.76
+                ],
+                [
+                  0.63,
+                  0.68
+                ],
+                [
+                  0.61,
+                  0.66
+                ],
+                [
+                  0.58,
+                  0.69
+                ],
+                [
+                  0.51,
+                  0.72
+                ],
+                [
+                  0.46,
+                  0.79
+                ],
+                [
+                  0.38,
+                  0.82
+                ],
+                [
+                  0.36,
+                  0.85
+                ],
+                [
+                  0.33,
+                  0.85
+                ],
+                [
+                  0.35,
+                  0.82
+                ],
+                [
+                  0.31,
+                  0.83
+                ],
+                [
+                  0.3,
+                  0.8
+                ],
+                [
+                  0.34,
+                  0.785
+                ],
+                [
+                  0.34,
+                  0.77
+                ],
+                [
+                  0.37,
+                  0.765
+                ],
+                [
+                  0.44,
+                  0.765
+                ],
+                [
+                  0.51,
+                  0.72
+                ],
+                [
+                  0.53,
+                  0.69
+                ],
+                [
+                  0.51,
+                  0.58
+                ],
+                [
+                  0.47,
+                  0.49
+                ],
+                [
+                  0.3,
+                  0.41
+                ],
+                [
+                  0.22,
+                  0.32
+                ],
+                [
+                  0.17,
+                  0.2
+                ],
+                [
+                  0.12,
+                  0.16
+                ]
+              ]
+            ],
+            "exclude": [],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-cyanocitta-stelleri",
+          "scientific_name": "Cyanocitta stelleri",
+          "common_name": "Steller’s Jay",
+          "title": "Swainson · perched · Fugleramme",
+          "variant": "Swainson · perched",
+          "creator": "William Swainson; John Richardson",
+          "date": "1831",
+          "source_url": "https://archive.org/download/faunaborealiamer22rich/page/n430.jpg",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/cyanocitta-stelleri.webp",
+          "upstream_file": "assets/artwork/classic/birds/cyanocitta-stelleri.webp",
+          "source_sha256": "a4f4167b734b9ef8649169b2540074194b0cfc67052119c1d3510f3659859fd6",
+          "pixel_sha256": "81a76fdea2369871e0770bb8da1f22a06a82a5c5511a0242f6d2759eb50de27f",
+          "width": 765,
+          "height": 1200,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "William Swainson; John Richardson; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Source scan: Smithsonian Libraries via Internet Archive. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Source plate 54 caption Garrulus stelleri; tall black crest and blue barred wings/tail match the source.",
+            "orientation": "Original upright right-facing pose.",
+            "crop": "Complete crest, bill, wings, tail and toes. Thick pale branch retained; excluded from bird measurement.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "a4f4167b734b9ef8649169b2540074194b0cfc67052119c1d3510f3659859fd6",
+            "reviewed_pixel_sha256": "81a76fdea2369871e0770bb8da1f22a06a82a5c5511a0242f6d2759eb50de27f"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "81a76fdea2369871e0770bb8da1f22a06a82a5c5511a0242f6d2759eb50de27f",
+            "size": [
+              765,
+              1200
+            ],
+            "polygons": [
+              [
+                [
+                  0.01,
+                  0.91
+                ],
+                [
+                  0.12,
+                  0.7
+                ],
+                [
+                  0.14,
+                  0.62
+                ],
+                [
+                  0.12,
+                  0.64
+                ],
+                [
+                  0.17,
+                  0.51
+                ],
+                [
+                  0.29,
+                  0.36
+                ],
+                [
+                  0.52,
+                  0.23
+                ],
+                [
+                  0.67,
+                  0.12
+                ],
+                [
+                  0.82,
+                  0.02
+                ],
+                [
+                  0.95,
+                  0
+                ],
+                [
+                  0.95,
+                  0.22
+                ],
+                [
+                  1,
+                  0.27
+                ],
+                [
+                  0.87,
+                  0.29
+                ],
+                [
+                  0.87,
+                  0.38
+                ],
+                [
+                  0.81,
+                  0.46
+                ],
+                [
+                  0.64,
+                  0.55
+                ],
+                [
+                  0.46,
+                  0.6
+                ],
+                [
+                  0.42,
+                  0.62
+                ],
+                [
+                  0.39,
+                  0.64
+                ],
+                [
+                  0.38,
+                  0.66
+                ],
+                [
+                  0.36,
+                  0.66
+                ],
+                [
+                  0.36,
+                  0.64
+                ],
+                [
+                  0.39,
+                  0.61
+                ],
+                [
+                  0.44,
+                  0.6
+                ],
+                [
+                  0.49,
+                  0.6
+                ],
+                [
+                  0.65,
+                  0.64
+                ],
+                [
+                  0.69,
+                  0.67
+                ],
+                [
+                  0.69,
+                  0.69
+                ],
+                [
+                  0.64,
+                  0.67
+                ],
+                [
+                  0.55,
+                  0.67
+                ],
+                [
+                  0.51,
+                  0.68
+                ],
+                [
+                  0.5,
+                  0.66
+                ],
+                [
+                  0.54,
+                  0.65
+                ],
+                [
+                  0.62,
+                  0.65
+                ],
+                [
+                  0.48,
+                  0.62
+                ],
+                [
+                  0.38,
+                  0.62
+                ],
+                [
+                  0.33,
+                  0.68
+                ],
+                [
+                  0.3,
+                  0.84
+                ],
+                [
+                  0.27,
+                  0.91
+                ],
+                [
+                  0.18,
+                  0.97
+                ],
+                [
+                  0.09,
+                  1
+                ]
+              ]
+            ],
+            "exclude": [],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-megaceryle-alcyon",
+          "scientific_name": "Megaceryle alcyon",
+          "common_name": "Belted Kingfisher",
+          "title": "Audubon · perched male · Fugleramme",
+          "variant": "Audubon · perched male",
+          "creator": "John James Audubon; Robert Havell",
+          "date": "1829–1838",
+          "source_url": "https://www.audubon.org/art/birds-of-america/belted-kingfisher",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/megaceryle-alcyon.webp",
+          "upstream_file": "assets/artwork/classic/birds/megaceryle-alcyon.webp",
+          "source_sha256": "759dcd4b1a9c50cb8b497a90d3bb1fd62b47159b5a480eeec78f583a3dcfb60f",
+          "pixel_sha256": "bb7cb108282f17980ff4615a4daad130f5618a673000c8624184075a4ad66976",
+          "width": 1200,
+          "height": 746,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "John James Audubon; Robert Havell; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Middle-left perched bird in Audubon plate 77; blue belt, white collar, pointed crest and long bill match the plate.",
+            "orientation": "Original right-facing horizontal perched pose.",
+            "crop": "Bill, crest, tail and curled feet preserved; small stump remnant beneath toes retained, not reconstructed.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "759dcd4b1a9c50cb8b497a90d3bb1fd62b47159b5a480eeec78f583a3dcfb60f",
+            "reviewed_pixel_sha256": "bb7cb108282f17980ff4615a4daad130f5618a673000c8624184075a4ad66976"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "bb7cb108282f17980ff4615a4daad130f5618a673000c8624184075a4ad66976",
+            "size": [
+              1200,
+              746
+            ],
+            "polygons": [],
+            "exclude": [
+              [
+                [
+                  0.32,
+                  0.945
+                ],
+                [
+                  0.335,
+                  0.91
+                ],
+                [
+                  0.35,
+                  0.915
+                ],
+                [
+                  0.36,
+                  0.93
+                ],
+                [
+                  0.405,
+                  0.94
+                ],
+                [
+                  0.45,
+                  0.925
+                ],
+                [
+                  0.47,
+                  0.91
+                ],
+                [
+                  0.47,
+                  0.95
+                ],
+                [
+                  0.4,
+                  0.995
+                ],
+                [
+                  0.32,
+                  0.98
+                ]
+              ],
+              [
+                [
+                  0.4,
+                  0.86
+                ],
+                [
+                  0.435,
+                  0.84
+                ],
+                [
+                  0.47,
+                  0.86
+                ],
+                [
+                  0.47,
+                  0.9
+                ],
+                [
+                  0.455,
+                  0.89
+                ],
+                [
+                  0.45,
+                  0.87
+                ]
+              ]
+            ],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-passer-domesticus",
+          "scientific_name": "Passer domesticus",
+          "common_name": "House Sparrow",
+          "title": "von Wright · male · Fugleramme",
+          "variant": "von Wright · male",
+          "creator": "Magnus von Wright; rawpixel digitization",
+          "date": "19th century; exact edition date unverified",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00220.jpg",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/passer-domesticus.webp",
+          "upstream_file": "assets/artwork/classic/birds/passer-domesticus.webp",
+          "source_sha256": "d5b9d9b05a9d42e1f78e2b3c341bc52926b507526aa6a5f83d453f47eada70e3",
+          "pixel_sha256": "6ec96921450a6d54837bb77e09633995a246fa8daba9a997bed0cc55064ee950",
+          "width": 981,
+          "height": 752,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Magnus von Wright; rawpixel digitization; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Upper male in Svenska Fåglar plate caption Passer domesticus; grey crown, black bib and chestnut nape match source.",
+            "orientation": "Original upright left-facing pose.",
+            "crop": "Original feet and short diagonal perch retained. Female below on source plate excluded; pale cutout halo retained.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "d5b9d9b05a9d42e1f78e2b3c341bc52926b507526aa6a5f83d453f47eada70e3",
+            "reviewed_pixel_sha256": "6ec96921450a6d54837bb77e09633995a246fa8daba9a997bed0cc55064ee950"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "6ec96921450a6d54837bb77e09633995a246fa8daba9a997bed0cc55064ee950",
+            "size": [
+              981,
+              752
+            ],
+            "polygons": [
+              [
+                [
+                  0,
+                  0.1
+                ],
+                [
+                  0.13,
+                  0
+                ],
+                [
+                  0.27,
+                  0.04
+                ],
+                [
+                  0.33,
+                  0.17
+                ],
+                [
+                  0.6,
+                  0.28
+                ],
+                [
+                  0.7,
+                  0.27
+                ],
+                [
+                  0.91,
+                  0.09
+                ],
+                [
+                  0.99,
+                  0.18
+                ],
+                [
+                  1,
+                  0.27
+                ],
+                [
+                  0.86,
+                  0.35
+                ],
+                [
+                  0.72,
+                  0.42
+                ],
+                [
+                  0.67,
+                  0.48
+                ],
+                [
+                  0.72,
+                  0.57
+                ],
+                [
+                  0.7,
+                  0.6
+                ],
+                [
+                  0.51,
+                  0.6
+                ],
+                [
+                  0.5,
+                  0.66
+                ],
+                [
+                  0.46,
+                  0.72
+                ],
+                [
+                  0.42,
+                  0.8
+                ],
+                [
+                  0.47,
+                  0.84
+                ],
+                [
+                  0.46,
+                  0.88
+                ],
+                [
+                  0.43,
+                  0.85
+                ],
+                [
+                  0.4,
+                  0.85
+                ],
+                [
+                  0.4,
+                  0.88
+                ],
+                [
+                  0.38,
+                  0.875
+                ],
+                [
+                  0.38,
+                  0.82
+                ],
+                [
+                  0.43,
+                  0.74
+                ],
+                [
+                  0.49,
+                  0.65
+                ],
+                [
+                  0.46,
+                  0.6
+                ],
+                [
+                  0.37,
+                  0.6
+                ],
+                [
+                  0.33,
+                  0.62
+                ],
+                [
+                  0.32,
+                  0.67
+                ],
+                [
+                  0.35,
+                  0.69
+                ],
+                [
+                  0.36,
+                  0.72
+                ],
+                [
+                  0.33,
+                  0.7
+                ],
+                [
+                  0.31,
+                  0.68
+                ],
+                [
+                  0.31,
+                  0.64
+                ],
+                [
+                  0.29,
+                  0.61
+                ],
+                [
+                  0.18,
+                  0.52
+                ],
+                [
+                  0.11,
+                  0.41
+                ],
+                [
+                  0.08,
+                  0.2
+                ],
+                [
+                  0.08,
+                  0.16
+                ]
+              ]
+            ],
+            "exclude": [],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-astur-cooperii",
+          "scientific_name": "Accipiter cooperii",
+          "common_name": "Cooper’s Hawk",
+          "title": "Audubon · flying · Fugleramme",
+          "variant": "Audubon · flying",
+          "creator": "John James Audubon; Robert Havell",
+          "date": "1829–1838",
+          "source_url": "https://media.audubon.org/boa_illustration/plate-36-stanley-hawk.jpg",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/astur-cooperii.webp",
+          "upstream_file": "assets/artwork/classic/birds/astur-cooperii.webp",
+          "source_sha256": "b609c2f7b205a8b87a4020e76565ae7c3507eec1de9b4a371b62fcddf98d74d3",
+          "pixel_sha256": "1e5aea6312267c3c94fec3cf0a1d10644b04eb16af188b552efd5e8bfc0f8ec6",
+          "width": 1200,
+          "height": 1132,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "John James Audubon; Robert Havell; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Upper large flying hawk from Audubon plate 36, Stanley Hawk. Audubon identifies this plate as Astur cooperii; Accipiter cooperii retained as the BirdNET synonym.",
+            "orientation": "Original rising/banking flight pose, head upper right.",
+            "crop": "Spread wings, bill and fanned tail match source; feet are hidden in the original pose. No prey or second bird included.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "b609c2f7b205a8b87a4020e76565ae7c3507eec1de9b4a371b62fcddf98d74d3",
+            "reviewed_pixel_sha256": "1e5aea6312267c3c94fec3cf0a1d10644b04eb16af188b552efd5e8bfc0f8ec6"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "1e5aea6312267c3c94fec3cf0a1d10644b04eb16af188b552efd5e8bfc0f8ec6",
+            "size": [
+              1200,
+              1132
+            ],
+            "polygons": [],
+            "exclude": [],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "taxonomic_aliases": [
+            "Astur cooperii"
+          ],
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-colaptes-auratus",
+          "scientific_name": "Colaptes auratus",
+          "common_name": "Northern Flicker",
+          "title": "Audubon · upright perched · Fugleramme",
+          "variant": "Audubon · upright perched",
+          "creator": "John James Audubon; Robert Havell",
+          "date": "1829–1838",
+          "source_url": "https://media.audubon.org/boa_illustration/plate-37-golden-winged-woodpecker.jpg",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/colaptes-auratus.webp",
+          "upstream_file": "assets/artwork/classic/birds/colaptes-auratus.webp",
+          "source_sha256": "58518023fbe37c01276d576bd0dcf932881c32941ead3d5914184a807c5f1d0b",
+          "pixel_sha256": "48ce8a1258bccdb9d040b2cf177588d5f3df9ff12d7b9e0876a36d6ea5de4541",
+          "width": 868,
+          "height": 1200,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "John James Audubon; Robert Havell; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Lower-right upright bird in Audubon plate 37, Golden-winged Woodpecker: Northern Flicker, yellow-shafted form; not a claim about the local subspecies.",
+            "orientation": "Original head-up, tail-down perched pose.",
+            "crop": "Complete bill, feet and tail; shortened original branch and pale halo retained. No invented feathers or toes.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "58518023fbe37c01276d576bd0dcf932881c32941ead3d5914184a807c5f1d0b",
+            "reviewed_pixel_sha256": "48ce8a1258bccdb9d040b2cf177588d5f3df9ff12d7b9e0876a36d6ea5de4541"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "48ce8a1258bccdb9d040b2cf177588d5f3df9ff12d7b9e0876a36d6ea5de4541",
+            "size": [
+              868,
+              1200
+            ],
+            "polygons": [
+              [
+                [
+                  0.02,
+                  0.7
+                ],
+                [
+                  0.14,
+                  0.55
+                ],
+                [
+                  0.31,
+                  0.35
+                ],
+                [
+                  0.51,
+                  0.2
+                ],
+                [
+                  0.54,
+                  0.11
+                ],
+                [
+                  0.64,
+                  0.04
+                ],
+                [
+                  0.75,
+                  0.02
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  0.97,
+                  0.04
+                ],
+                [
+                  0.81,
+                  0.1
+                ],
+                [
+                  0.75,
+                  0.18
+                ],
+                [
+                  0.77,
+                  0.35
+                ],
+                [
+                  0.71,
+                  0.46
+                ],
+                [
+                  0.57,
+                  0.57
+                ],
+                [
+                  0.46,
+                  0.61
+                ],
+                [
+                  0.46,
+                  0.64
+                ],
+                [
+                  0.51,
+                  0.68
+                ],
+                [
+                  0.53,
+                  0.72
+                ],
+                [
+                  0.51,
+                  0.75
+                ],
+                [
+                  0.47,
+                  0.75
+                ],
+                [
+                  0.46,
+                  0.73
+                ],
+                [
+                  0.43,
+                  0.76
+                ],
+                [
+                  0.4,
+                  0.765
+                ],
+                [
+                  0.38,
+                  0.75
+                ],
+                [
+                  0.37,
+                  0.71
+                ],
+                [
+                  0.34,
+                  0.71
+                ],
+                [
+                  0.31,
+                  0.77
+                ],
+                [
+                  0.27,
+                  0.9
+                ],
+                [
+                  0.23,
+                  0.97
+                ],
+                [
+                  0.19,
+                  0.94
+                ],
+                [
+                  0.15,
+                  1
+                ],
+                [
+                  0.09,
+                  0.94
+                ],
+                [
+                  0.09,
+                  0.8
+                ],
+                [
+                  0.14,
+                  0.65
+                ],
+                [
+                  0.08,
+                  0.68
+                ]
+              ]
+            ],
+            "exclude": [],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-haemorhous-mexicanus",
+          "scientific_name": "Haemorhous mexicanus",
+          "common_name": "House Finch",
+          "title": "Audubon · leaning male · Fugleramme",
+          "variant": "Audubon · leaning male",
+          "creator": "John James Audubon; Robert Havell",
+          "date": "1829–1838",
+          "source_url": "https://media.audubon.org/boa_illustration/plate-424-lazuli-finch.jpg",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/haemorhous-mexicanus.webp",
+          "upstream_file": "assets/artwork/classic/birds/haemorhous-mexicanus.webp",
+          "source_sha256": "ebe620c710251f9eb7c665323f681c69c64827020385d6ad539b1627fe01e679",
+          "pixel_sha256": "5a7a30fa280b04ae88b72a5009b969adbd944e096d549b90f032715f7b42bc54",
+          "width": 1200,
+          "height": 598,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "John James Audubon; Robert Havell; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Red-breasted finch second from top in Audubon plate 424, labelled Crimson-fronted Finch (Fringilla frontalis); matches historical House Finch figure, not blue Lazuli Finch above.",
+            "orientation": "Original right-facing leaning/feeding pose, both feet on twig.",
+            "crop": "Bill, wings, tail and feet match original. Short twig retained; other species and long botanical stems excluded upstream.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "ebe620c710251f9eb7c665323f681c69c64827020385d6ad539b1627fe01e679",
+            "reviewed_pixel_sha256": "5a7a30fa280b04ae88b72a5009b969adbd944e096d549b90f032715f7b42bc54"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "5a7a30fa280b04ae88b72a5009b969adbd944e096d549b90f032715f7b42bc54",
+            "size": [
+              1200,
+              598
+            ],
+            "polygons": [],
+            "exclude": [
+              [
+                [
+                  0.155,
+                  0.8
+                ],
+                [
+                  0.165,
+                  0.84
+                ],
+                [
+                  0.22,
+                  0.87
+                ],
+                [
+                  0.23,
+                  0.85
+                ]
+              ],
+              [
+                [
+                  0.285,
+                  0.855
+                ],
+                [
+                  0.46,
+                  0.89
+                ],
+                [
+                  0.46,
+                  0.92
+                ],
+                [
+                  0.275,
+                  0.89
+                ]
+              ]
+            ],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        },
+        {
+          "id": "fugleramme-piranga-ludoviciana",
+          "scientific_name": "Piranga ludoviciana",
+          "common_name": "Western Tanager",
+          "title": "Audubon · male · Fugleramme",
+          "variant": "Audubon · male",
+          "creator": "John James Audubon; Robert Havell",
+          "date": "1829–1838",
+          "source_url": "https://www.audubon.org/art/birds-of-america/louisiana-tanager-and-scarlet-tanager",
+          "upstream_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/birds/piranga-ludoviciana.webp",
+          "upstream_file": "assets/artwork/classic/birds/piranga-ludoviciana.webp",
+          "source_sha256": "2672861fefecb87d3afe47cc7bacb2dcc087c5f791d439cc31f4d99d1acac4f8",
+          "pixel_sha256": "1ca572e01a18198f4bc63e77d3849e6664d597a820e9bec683bd5f8718bc78b9",
+          "width": 1200,
+          "height": 628,
+          "retrieved": "2026-10-14",
+          "rights": "CC BY-SA 4.0",
+          "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "John James Audubon; Robert Havell; historical plate, cutout and digital restoration by Fugleramme / Arne Giacomo Munthe-Kaas. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing. Prepared artwork: CC BY-SA 4.0.",
+          "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/33b943b41222b980f7bde913f3453028ea401fe7/assets/artwork/classic/ATTRIBUTION.md",
+          "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time.",
+          "processing": {
+            "method": "Lossless decoded RGBA conversion; original cutout pixels retained",
+            "recipe": "artwork_packs.py"
+          },
+          "review": {
+            "status": "reviewed",
+            "date": "2026-10-14",
+            "species_check": "Upper-left yellow-bodied, red-headed bird in Audubon plate 354; Western Tanager (historically Louisiana Tanager), not the red Scarlet Tanager below.",
+            "orientation": "Original left-facing horizontal perched pose.",
+            "crop": "Complete bird and visible feet with short diagonal twig. Other birds, leaves and labels excluded; pale halo retained.",
+            "scope": "Individually compared pinned upstream cutout on white with the linked complete historical plate. Identity, orientation, visible anatomy, number of birds, perimeter and retained perch reviewed. This is not a whole-library approval.",
+            "reviewed_source_sha256": "2672861fefecb87d3afe47cc7bacb2dcc087c5f791d439cc31f4d99d1acac4f8",
+            "reviewed_pixel_sha256": "1ca572e01a18198f4bc63e77d3849e6664d597a820e9bec683bd5f8718bc78b9"
+          },
+          "subject_geometry": {
+            "pixel_sha256": "1ca572e01a18198f4bc63e77d3849e6664d597a820e9bec683bd5f8718bc78b9",
+            "size": [
+              1200,
+              628
+            ],
+            "polygons": [],
+            "exclude": [
+              [
+                [
+                  0.3,
+                  0.58
+                ],
+                [
+                  0.34,
+                  0.59
+                ],
+                [
+                  0.47,
+                  0.79
+                ],
+                [
+                  0.47,
+                  0.82
+                ],
+                [
+                  0.33,
+                  0.65
+                ]
+              ],
+              [
+                [
+                  0.51,
+                  0.83
+                ],
+                [
+                  0.57,
+                  0.92
+                ],
+                [
+                  0.55,
+                  0.97
+                ],
+                [
+                  0.5,
+                  0.89
+                ]
+              ]
+            ],
+            "review": {
+              "status": "reviewed",
+              "date": "2026-10-14",
+              "notes": "Traced the visible bird against the full prepared image; external leaves and perch excluded. Small toe/perch boundaries and paper halo are approximate. Geometry changes measurement only."
+            }
+          },
+          "modifications": "Upstream: historical plate cut and digitally restored for Fugleramme, with paper halo. Federfunk: lossless RGBA WebP-to-PNG conversion only; no new painted, generated or reconstructed anatomy. Composition, resizing and optional display color conversion occur only at render time."
+        }
+      ]
+    }
+  ]
+}

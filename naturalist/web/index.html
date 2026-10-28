@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#f6f5ef">
+    <title>Heard today · FederFunk</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/enhancements.css">
+    <script src="/app.js" defer></script>
+    <script src="/enhancements.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the picture</a>
+    <div class="page-shell">
+      <main id="main">
+        <header class="page-heading">
+          <div>
+            <h1><span class="heading-brand">FederFunk <span class="brand-dot" aria-hidden="true">•</span></span> <span id="collection-date">Loading…</span></h1>
+            <p class="day-summary" aria-live="polite"><span><strong id="species-total">—</strong> species</span><span aria-hidden="true">·</span><span title="Identifications from recordings, not individual birds"><strong id="detection-total">—</strong> detections</span><span id="demo-badge" class="tag" hidden>Sample</span></p>
+          </div>
+          <a id="history-link" href="#archive-details">History <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <div id="service-message" class="notice" role="status" hidden>
+          <p id="service-message-text"></p>
+          <button id="retry-button" type="button" class="text-button">Try again</button>
+        </div>
+
+        <div class="workspace">
+          <section class="picture-section" aria-label="The daily picture">
+            <div id="picture-mat" class="picture-mat">
+              <div id="picture-paper" class="picture-paper">
+                <img id="picture" alt="Today's birds, arranged as a natural history illustration" hidden>
+                <div id="bird-hotspots" class="bird-hotspots" aria-label="Explore birds in the picture"></div>
+                <div id="picture-placeholder" class="picture-placeholder" role="status">
+                  <span class="loading-mark" aria-hidden="true"></span>
+                  <p id="picture-placeholder-text">Loading artwork…</p>
+                </div>
+              </div>
+            </div>
+            <div class="picture-toolbar">
+              <div class="segmented" role="group" aria-label="Preview colors">
+                <button type="button" id="art-mode" aria-pressed="true">Artwork</button>
+                <button type="button" id="paper-mode" aria-pressed="false">E-paper colors</button>
+              </div>
+              <a id="download-image" href="/art.png" download="heard-today.png" title="Download a copy of the artwork">Download <span aria-hidden="true">↓</span></a>
+            </div>
+            <p id="preview-note" class="small muted">Colors on the physical display may differ.</p>
+            <div class="picture-actions"><span id="bird-click-hint" class="field-help" hidden>Select a bird for details.</span><button id="compare-colors" class="text-button" type="button">Compare colors</button></div>
+            <div id="frame-schedule-status" class="frame-schedule-status" role="status" hidden>
+              <span class="schedule-dot" aria-hidden="true"></span>
+              <div><p id="frame-schedule-label"></p><p id="frame-schedule-detail" class="field-help"></p></div>
+            </div>
+          </section>
+
+          <aside class="sidebar" aria-label="Collection details and picture settings">
+            <section class="settings-section" aria-labelledby="settings-heading">
+              <div class="section-heading"><h2 id="settings-heading">Make it yours</h2><span id="local-preview-note" class="tag" title="Changes here affect only this preview, not the physical display." hidden>Preview</span></div>
+              <form id="settings-form">
+                <fieldset id="settings-fields" disabled>
+                  <legend class="sr-only">Picture settings</legend>
+                  <fieldset class="presentation-field" aria-describedby="presentation-status">
+                    <legend class="sr-only">Presentation</legend>
+                    <input type="hidden" id="style" name="style" value="collage">
+                    <div id="presentation-options" class="presentation-options">
+                      <label class="presentation-option">
+                        <input class="sr-only" type="radio" name="presentation" value="collage" aria-labelledby="presentation-name-collage" checked>
+                        <span class="presentation-card"><span class="presentation-image"><img id="presentation-collage" alt="" hidden><span class="presentation-placeholder">Loading…</span></span><span id="presentation-name-collage" class="presentation-name">Collage<span class="presentation-check" aria-hidden="true">✓</span></span></span>
+                      </label>
+                      <label class="presentation-option">
+                        <input class="sr-only" type="radio" name="presentation" value="classic" aria-labelledby="presentation-name-classic">
+                        <span class="presentation-card"><span class="presentation-image"><img id="presentation-classic" alt="" hidden><span class="presentation-placeholder">Loading…</span></span><span id="presentation-name-classic" class="presentation-name">Classic<span class="presentation-check" aria-hidden="true">✓</span></span></span>
+                      </label>
+                      <label class="presentation-option">
+                        <input class="sr-only" type="radio" name="presentation" value="field_guide" aria-labelledby="presentation-name-field_guide">
+                        <span class="presentation-card"><span class="presentation-image"><img id="presentation-field_guide" alt="" hidden><span class="presentation-placeholder">Loading…</span></span><span id="presentation-name-field_guide" class="presentation-name">Field guide<span class="presentation-check" aria-hidden="true">✓</span></span></span>
+                      </label>
+                    </div>
+                    <p id="presentation-status" class="field-help" role="status" aria-live="polite"></p>
+                    <button id="presentation-retry" class="text-button" type="button" hidden>Retry previews</button>
+                    <details id="presentation-credits" class="presentation-credits" hidden><summary>Preview image credits</summary><ul id="presentation-credit-list"></ul></details>
+                  </fieldset>
+                  <div id="classic-media-field" class="field" hidden>
+                    <label for="classic_media">Images</label>
+                    <select id="classic_media" name="classic_media">
+                      <option value="photos">Photos</option>
+                      <option value="drawings">Historical drawings</option>
+                    </select>
+                  </div>
+                  <div class="toggle-list">
+                    <label class="toggle-row" for="show_names"><span>Bird names</span><input type="checkbox" id="show_names" name="show_names" role="switch"><span class="switch" aria-hidden="true"></span></label>
+                    <label class="toggle-row" for="show_scientific"><span>Scientific names</span><input type="checkbox" id="show_scientific" name="show_scientific" role="switch"><span class="switch" aria-hidden="true"></span></label>
+                    <label class="toggle-row" for="show_counts"><span>Detection counts</span><input type="checkbox" id="show_counts" name="show_counts" role="switch"><span class="switch" aria-hidden="true"></span></label>
+                    <label class="toggle-row" for="show_title"><span>“Heard today” title</span><input type="checkbox" id="show_title" name="show_title" role="switch"><span class="switch" aria-hidden="true"></span></label>
+                    <label class="toggle-row" for="show_qr"><span>Dashboard QR code</span><input type="checkbox" id="show_qr" name="show_qr" role="switch"><span class="switch" aria-hidden="true"></span></label>
+                  </div>
+
+                  <div id="qr-settings" class="field" hidden>
+                    <label for="dashboard_url">Dashboard address</label>
+                    <input type="url" id="dashboard_url" name="dashboard_url" placeholder="http://your-server:8000" autocomplete="url" aria-describedby="qr-help">
+                    <p class="field-help" id="qr-help">Use an address your phone can reach on the same network.</p>
+                  </div>
+
+                  <div class="field">
+                    <label for="scale">Size birds by</label>
+                    <select id="scale" name="scale" aria-describedby="scale-help">
+                      <option value="log">Frequency · logarithmic</option>
+                      <option value="linear">Frequency · proportional</option>
+                      <option value="equal">Equal size</option>
+                    </select>
+                    <p id="scale-help" class="field-help">Logarithmic scaling keeps less frequent species visible.</p>
+                  </div>
+
+                  <label class="toggle-row" for="show_all"><span>All birds heard today</span><input type="checkbox" id="show_all" name="show_all" role="switch" checked><span class="switch" aria-hidden="true"></span></label>
+                  <div class="field range-field" id="bird-limit-field" hidden>
+                    <label for="max_birds">Maximum species <output id="max-birds-value" for="max_birds">8</output></label>
+                    <input type="range" id="max_birds" name="max_birds" min="1" max="12" step="1" value="8">
+                    <div class="range-labels" aria-hidden="true"><span>1</span><span>12</span></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="orientation">Orientation</label>
+                    <select id="orientation" name="orientation"><option value="portrait">Portrait · 1200 × 1600</option><option value="landscape">Landscape · 1600 × 1200</option></select>
+                  </div>
+
+                  <details id="variant-section" class="artwork-details" hidden>
+                    <summary>Illustration choices</summary>
+                    <div class="field"><label for="variant_mode">Automatic choices</label><select id="variant_mode" name="variant_mode"><option value="daily">Daily selection</option><option value="fixed">Fixed selection</option></select><p class="field-help">Manual choices override automatic selection.</p></div>
+                    <div id="variant-fields"></div>
+                  </details>
+
+                  <section class="schedule-section" aria-labelledby="schedule-heading">
+                    <div class="section-heading"><h2 id="schedule-heading">Schedule</h2><span class="tiny-label">When to update</span></div>
+                    <div id="refresh-interval-fields" class="interval-fields">
+                      <div class="field">
+                        <label for="refresh_interval">Check every</label>
+                        <select id="refresh_interval" name="refresh_interval" aria-describedby="refresh-interval-help"><option value="30">30 minutes</option><option value="60">60 minutes</option><option value="120">120 minutes</option><option value="custom">Custom</option></select>
+                      </div>
+                      <div id="refresh-interval-custom-field" class="field" hidden>
+                        <label for="refresh_interval_minutes">Minutes</label>
+                        <input type="number" id="refresh_interval_minutes" name="refresh_interval_minutes" min="5" max="720" step="1" value="30" placeholder="5–720" disabled aria-describedby="refresh-interval-help">
+                      </div>
+                    </div>
+                    <p id="refresh-interval-help" class="field-help">Requires the next firmware version.</p>
+                    <div class="field">
+                      <label for="update_mode">Update picture</label>
+                      <select id="update_mode" name="update_mode" aria-describedby="meaningful-help"><option value="every_check">Every check</option><option value="meaningful">Meaningful changes</option></select>
+                    </div>
+                    <fieldset id="meaningful-controls" hidden disabled>
+                      <legend class="sr-only">Meaningful changes</legend>
+                      <div class="schedule-boundary">
+                        <div class="field"><label for="meaningful_change_percent">Size change (%)</label><input type="number" id="meaningful_change_percent" name="meaningful_change_percent" min="5" max="50" step="1" value="10" required aria-describedby="meaningful-help"></div>
+                        <div class="field"><label for="meaningful_max_minutes">Maximum hold (min)</label><input type="number" id="meaningful_max_minutes" name="meaningful_max_minutes" min="30" max="720" step="1" value="180" required aria-describedby="meaningful-help"></div>
+                      </div>
+                    </fieldset>
+                    <p id="meaningful-help" class="field-help" hidden>New species, size changes, or after 3 hours. Shown at the next check.</p>
+                    <details id="power-controls" class="power-details">
+                      <summary>Battery safeguard</summary>
+                      <div class="field"><label for="stop_voltage">Pause below (V)</label><input type="number" id="stop_voltage" name="stop_voltage" min="3.2" max="3.6" step="0.05" value="3.3" required aria-describedby="stop-voltage-help power-control-status"></div>
+                      <p id="stop-voltage-help" class="field-help">Resumes 0.15 V above this level. Software safeguard; use a protected battery.</p>
+                      <p id="power-control-status" class="field-help">Requires the next firmware version.</p>
+                    </details>
+                    <label class="toggle-row" for="schedule_enabled"><span>Pause overnight</span><input type="checkbox" id="schedule_enabled" name="schedule_enabled" role="switch"><span class="switch" aria-hidden="true"></span></label>
+                    <p class="field-help">The display keeps its last image overnight.</p>
+                    <p id="sun-times" class="sun-times" hidden></p>
+                    <fieldset id="schedule-controls">
+                      <legend class="sr-only">Update window</legend>
+                      <div class="schedule-boundary">
+                        <div class="field">
+                          <label for="schedule_start_mode">Start updating</label>
+                          <select id="schedule_start_mode" name="schedule_start_mode"><option value="sunrise">At sunrise</option><option value="sunset">At sunset</option><option value="fixed">At a set time</option></select>
+                        </div>
+                        <div id="schedule_start_offset_field" class="field">
+                          <label for="schedule_start_offset">Minutes before / after</label>
+                          <input type="number" id="schedule_start_offset" name="schedule_start_offset" min="-180" max="180" step="1" value="0" required aria-describedby="schedule-offset-help">
+                        </div>
+                        <div id="schedule_start_time_field" class="field" hidden>
+                          <label for="schedule_start_time">Local time</label>
+                          <input type="time" id="schedule_start_time" name="schedule_start_time" value="07:00" required>
+                        </div>
+                      </div>
+                      <div class="schedule-boundary">
+                        <div class="field">
+                          <label for="schedule_end_mode">Hold the last picture</label>
+                          <select id="schedule_end_mode" name="schedule_end_mode"><option value="sunrise">At sunrise</option><option value="sunset">At sunset</option><option value="fixed">At a set time</option></select>
+                        </div>
+                        <div id="schedule_end_offset_field" class="field">
+                          <label for="schedule_end_offset">Minutes before / after</label>
+                          <input type="number" id="schedule_end_offset" name="schedule_end_offset" min="-180" max="180" step="1" value="60" required aria-describedby="schedule-offset-help">
+                        </div>
+                        <div id="schedule_end_time_field" class="field" hidden>
+                          <label for="schedule_end_time">Local time</label>
+                          <input type="time" id="schedule_end_time" name="schedule_end_time" value="20:00" required>
+                        </div>
+                      </div>
+                      <p id="schedule-offset-help" class="field-help">Use a negative number for earlier, or a positive number for later. +60 means one hour after.</p>
+                      <details class="location-details">
+                        <summary>Sun location &amp; time zone</summary>
+                        <p id="schedule-location-note" class="field-help">Salt Lake City · ZIP 84105</p>
+                        <div class="schedule-boundary">
+                          <div class="field"><label for="schedule_latitude">Latitude</label><input type="number" id="schedule_latitude" name="schedule_latitude" min="-90" max="90" step="any" value="40.7372" required></div>
+                          <div class="field"><label for="schedule_longitude">Longitude</label><input type="number" id="schedule_longitude" name="schedule_longitude" min="-180" max="180" step="any" value="-111.8581" required></div>
+                        </div>
+                        <div class="field"><label for="schedule_timezone">Time zone</label><input type="text" id="schedule_timezone" name="schedule_timezone" value="America/Denver" required spellcheck="false" autocomplete="off" aria-describedby="timezone-help"><p id="timezone-help" class="field-help">Daylight saving time is handled automatically.</p></div>
+                      </details>
+                    </fieldset>
+                  </section>
+                </fieldset>
+
+                <div class="apply-area">
+                  <button id="apply-button" class="primary-button" type="submit" disabled>Apply changes <span aria-hidden="true">↗</span></button>
+                  <p id="save-status" class="save-status" aria-live="polite">Loading settings…</p>
+                  <p id="apply-help" class="field-help">Applied at the next scheduled update.</p>
+                </div>
+              </form>
+            </section>
+
+            <section class="today-section" aria-label="Detection details">
+              <details id="species-details" class="collection-details">
+                <summary>Detection details</summary>
+                <p id="confidence-note" class="small muted" hidden></p>
+              <div id="hourly-section" class="hourly-section" hidden>
+                <div class="mini-heading"><span class="tiny-label">Detections / hour</span></div>
+                <div id="hourly-chart" class="hourly-chart" role="img" aria-label="Hourly detections"></div>
+                <div class="hour-labels" aria-hidden="true"><span>00</span><span>06</span><span>12</span><span>18</span><span>24</span></div>
+              </div>
+                <div id="species-list" class="species-list" aria-label="Species detected"></div>
+              </details>
+              <p id="species-empty" class="empty-note" hidden>No detections yet.</p>
+            </section>
+
+            <section class="device-section" aria-labelledby="device-heading">
+              <div class="section-heading"><h2 id="device-heading">Battery</h2><span id="device-status" class="tiny-label">No reading yet</span></div>
+              <div class="device-reading"><strong id="device-percent" title="Estimated from battery voltage">—</strong><div><p id="device-charging">Battery status unavailable</p><p id="device-voltage" class="muted" hidden></p></div></div>
+              <p id="device-reported" class="field-help">No battery reading yet.</p>
+              <p id="device-seen" class="field-help" hidden></p>
+              <p id="device-picture-status" class="field-help" hidden></p>
+              <details id="battery-details" class="battery-details">
+                <summary>Battery history</summary>
+                <div class="journal-toolbar"><label for="battery-days" class="sr-only">Battery history range</label><select id="battery-days"><option value="7">Last 7 days</option><option value="30">Last 30 days</option></select><a id="battery-csv" href="/api/battery.csv?days=30" download>Download readings ↓</a></div>
+                <p id="battery-history-status" class="field-help" role="status"></p>
+                <div id="battery-chart" class="battery-chart"></div>
+                <p id="battery-estimate" class="battery-estimate"></p>
+                <p id="battery-estimate-note" class="field-help"></p>
+              </details>
+            </section>
+
+          </aside>
+        </div>
+
+        <section class="print-journal sources-section" aria-labelledby="archive-heading">
+          <details id="archive-details">
+            <summary id="archive-heading">Daily history</summary>
+            <p class="small muted">Saved automatically. Today’s print updates through the day; previous days are kept.</p>
+            <p id="archive-status" class="field-help" role="status"></p>
+            <div id="archive-grid" class="archive-grid"></div>
+          </details>
+        </section>
+
+        <section class="sources-section" aria-label="Optional artwork collections">
+          <details id="packs-details">
+            <summary>Artwork collections</summary>
+            <p class="small muted">Additional illustrations are available as separate downloads. Each collection retains its source credits and license terms.</p>
+            <p id="packs-status" class="field-help" role="status"></p>
+            <div id="packs-list" class="packs-list"></div>
+          </details>
+        </section>
+
+        <section class="sources-section" aria-label="Illustration library coverage">
+          <details id="library-details">
+            <summary>Illustration library <span class="muted">Your complete species history</span></summary>
+            <p id="library-summary" class="small muted"></p>
+            <p class="small muted">Based on BirdNET identifications.</p>
+            <label for="library-search" class="small">Find a species</label>
+            <input id="library-search" type="search" placeholder="Common or scientific name">
+            <div id="library-list" class="library-list"></div>
+          </details>
+        </section>
+
+        <section id="sources-section" class="sources-section" aria-labelledby="sources-heading" hidden>
+          <details>
+            <summary id="sources-heading">Image credits <span class="muted">Sources &amp; licenses</span></summary>
+            <p id="credits-description" class="small muted">Credits for the images in this print.</p>
+            <ul id="artwork-credits"></ul>
+          </details>
+        </section>
+      </main>
+
+      <footer class="footer"><span>FederFunk</span><span>Powered by BirdNET-Go</span></footer>
+    </div>
+    <dialog id="color-dialog" class="field-dialog wide-dialog" aria-labelledby="color-heading">
+      <div class="dialog-heading"><div><p class="eyebrow">Display</p><h2 id="color-heading">Color comparison</h2></div><button type="button" class="dialog-close" data-close-dialog aria-label="Close color comparisons">×</button></div>
+      <p class="small muted">Preview the same artwork with different color profiles. The current profile remains selected.</p>
+      <p id="color-status" class="field-help" role="status"></p><div id="color-grid" class="color-grid"></div>
+    </dialog>
+    <dialog id="bird-dialog" class="field-dialog bird-dialog" aria-labelledby="bird-heading">
+      <div class="dialog-heading"><div><p class="eyebrow">Detections</p><h2 id="bird-heading">Bird details</h2><p id="bird-scientific" class="latin-name"></p></div><button type="button" class="dialog-close" data-close-dialog aria-label="Close bird details">×</button></div>
+      <p id="bird-status" class="field-help" role="status"></p><div id="bird-content"></div>
+    </dialog>
+    <dialog id="archive-dialog" class="field-dialog archive-dialog" aria-labelledby="archive-dialog-heading">
+      <div class="dialog-heading"><div><p class="eyebrow">Archive</p><h2 id="archive-dialog-heading">Saved print</h2></div><button type="button" class="dialog-close" data-close-dialog aria-label="Close saved print">×</button></div>
+      <p id="archive-dialog-status" class="field-help" role="status"></p><div id="archive-content"></div>
+    </dialog>
+  </body>
+</html>

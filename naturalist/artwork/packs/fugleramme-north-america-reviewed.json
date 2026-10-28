@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "id": "fugleramme-north-america-reviewed",
+  "title": "Fugleramme · reviewed North American birds",
+  "description": "Thirty individually reviewed single-bird historical cutouts matching labels in the local BirdNET-Go history.",
+  "revision": "4c41f772a0574e4348f6ff722b1acf97d536fc8b",
+  "upstream_manifest_sha256": "938b6124e2f1b3697816ebddeae5c1eb44825eee980ba47ed548c058e86e1a12",
+  "source_url": "https://github.com/arnegiacomo/fugleramme/tree/4c41f772a0574e4348f6ff722b1acf97d536fc8b/assets/artwork/classic",
+  "rights": "CC BY-SA 4.0",
+  "rights_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "Historical artists and source institutions credited per image; prepared cutouts by Fugleramme / Arne Giacomo Munthe-Kaas.",
+  "attribution_url": "https://github.com/arnegiacomo/fugleramme/blob/4c41f772a0574e4348f6ff722b1acf97d536fc8b/assets/artwork/classic/ATTRIBUTION.md",
+  "changes": "Upstream: historical plate cut and digitally restored for Fugleramme, with a pale paper halo on some figures. FederFunk: lossless RGBA WebP-to-PNG conversion only; no painted, generated or reconstructed anatomy. Composition, resizing and display color conversion occur only at render time.",
+  "review_defaults": {
+    "date": "2026-10-18",
+    "scope": "Individually inspected at full size and on a paper contact sheet against the pinned upstream species mapping and linked historical source. Identity, orientation, number of birds, visible anatomy, perimeter and retained perch or ground were reviewed. Multi-bird alternatives were excluded. This is not a whole-collection approval."
+  },
+  "sources": {
+    "audubon": {
+      "title": "Audubon, Birds of America",
+      "creator": "John James Audubon; Robert Havell",
+      "date": "1829–1838",
+      "attribution": "John James Audubon; Robert Havell; courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing"
+    },
+    "fuertes": {
+      "title": "Louis Agassiz Fuertes",
+      "creator": "Louis Agassiz Fuertes",
+      "date": "1910–1923",
+      "attribution": "Louis Agassiz Fuertes; historical source scan via Wikimedia Commons, Biodiversity Heritage Library or Internet Archive"
+    },
+    "gould": {
+      "title": "Gould, Birds of Europe",
+      "creator": "John Gould and collaborators",
+      "date": "1832–1837",
+      "attribution": "John Gould and historical collaborators; public-domain plate scan via Wikimedia Commons"
+    },
+    "jardine": {
+      "title": "Jardine",
+      "creator": "Sir William Jardine and collaborators",
+      "date": "1830s",
+      "attribution": "Sir William Jardine and historical collaborators; source scan via Biodiversity Heritage Library and Wikimedia Commons"
+    },
+    "morris": {
+      "title": "Morris, British Game Birds",
+      "creator": "Beverley R. Morris and collaborators",
+      "date": "1855",
+      "attribution": "Beverley R. Morris and historical collaborators; Biodiversity Heritage Library source scan via Wikimedia Commons"
+    },
+    "swainson": {
+      "title": "William John Swainson",
+      "creator": "William John Swainson",
+      "date": "1841",
+      "attribution": "William John Swainson; public-domain source scan via Wikimedia Commons"
+    },
+    "vieillot": {
+      "title": "Vieillot",
+      "creator": "Louis Pierre Vieillot and collaborators",
+      "date": "1825–1834",
+      "attribution": "Louis Pierre Vieillot and historical collaborators; University of Amsterdam Special Collections source via Wikimedia Commons"
+    },
+    "vonwright": {
+      "title": "von Wright, Svenska Fåglar",
+      "creator": "Magnus, Wilhelm and Ferdinand von Wright",
+      "date": "1828–1929",
+      "attribution": "Magnus, Wilhelm and Ferdinand von Wright; rawpixel digitization"
+    }
+  },
+  "assets": [
+    {
+      "slug": "cygnus-columbianus",
+      "scientific_name": "Cygnus columbianus",
+      "common_name": "Tundra Swan",
+      "source_key": "gould",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeVBewicks_Swan.jpg",
+      "source_sha256": "b68537b53da5400c05154d2fe50c798a717902da3a2623f3e05304160cc413c5",
+      "pixel_sha256": "729f5b50b982da4fee8bf7fb610ab2c1a074d5f6dda3b9b3ef1ed6d6363281eb",
+      "width": 1200,
+      "height": 732,
+      "figure_review": "Single resting swan, left-facing; complete bill, neck, body, folded wing, feet and tail retained with a small source ground patch."
+    },
+    {
+      "slug": "hirundo-rustica-2",
+      "scientific_name": "Hirundo rustica",
+      "common_name": "Barn Swallow",
+      "source_key": "vonwright",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00018.jpg",
+      "source_sha256": "ed449ad954f7b8402421a331b3120c65dc91ecf3615c711f9272ac97d4fa2ec4",
+      "pixel_sha256": "42fc0f7ae54cce4ad25cb572c50730d110eff2cfd935b4ab82014d94517f3750",
+      "width": 1111,
+      "height": 791,
+      "figure_review": "Single perched swallow, left-facing; bill, folded wings, deeply forked tail and visible feet retained with a short post."
+    },
+    {
+      "slug": "phasianus-colchicus",
+      "scientific_name": "Phasianus colchicus",
+      "common_name": "Ring-necked Pheasant",
+      "source_key": "gould",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVCommon_Pheasant.jpg",
+      "source_sha256": "72c7d4e9cf97cf1fcbd127872c946be249378db663e184270cc1614ebccc57c3",
+      "pixel_sha256": "bc52f370b396793d999da2d1389768db61a932c46a9c396e783720b7759323a3",
+      "width": 1200,
+      "height": 740,
+      "figure_review": "Foreground male pheasant in left-facing profile, with a background female, tree stump, leaves and grasses. Earlier single-bird/right-facing review was incorrect and corrected on 2026-10-27.",
+      "crop_review": "The upstream source contains two birds and scenery. The reviewed bird-only adaptation in support-removals-reviewed.json isolates the foreground male, retaining exactly one bird for display."
+    },
+    {
+      "slug": "meleagris-gallopavo",
+      "scientific_name": "Meleagris gallopavo",
+      "common_name": "Wild Turkey",
+      "source_key": "audubon",
+      "source_url": "https://www.audubon.org/art/birds-of-america/wild-turkey",
+      "source_sha256": "fa8a98ccb472042694fff95ef0780c72dda512303d69c379e6813c129f62611c",
+      "pixel_sha256": "647f670b7737c8dd9eda5ba77cbe5bcd04cad5cf02eeafb78d9794a567ff2175",
+      "width": 973,
+      "height": 1200,
+      "figure_review": "Single upright turkey in right-facing profile; complete head, body, wing, tail and both legs retained with original low vegetation."
+    },
+    {
+      "slug": "certhia-americana",
+      "scientific_name": "Certhia americana",
+      "common_name": "Brown Creeper",
+      "source_key": "audubon",
+      "source_url": "https://commons.wikimedia.org/wiki/File:415_I._Brown_Creeper_-_2._Californian_Nuthatch.jpg",
+      "source_sha256": "4734016e947394205de863d13b414423f41c1204c7e9c8841d270069c739e8ac",
+      "pixel_sha256": "249577b4654202af1d97205b151b32e110583c53b9b8ba9fae4689e2d0f48487",
+      "width": 678,
+      "height": 1200,
+      "figure_review": "Single climbing creeper, head-up on a retained trunk section; bill, wings, tail and gripping feet remain visible."
+    },
+    {
+      "slug": "ixoreus-naevius",
+      "scientific_name": "Ixoreus naevius",
+      "common_name": "Varied Thrush",
+      "source_key": "audubon",
+      "source_url": "https://media.audubon.org/boa_illustration/plate-369-mountain-mocking-bird.jpg",
+      "source_sha256": "fe65393ddf18d1d7a4f2f8dd33a5e7d3711319c7ca4bef34ef300193b67a0213",
+      "pixel_sha256": "af9334c1829c73a3cbdbdd907db7084f0962c987751a148a211cb6c76a089f12",
+      "width": 1200,
+      "height": 989,
+      "figure_review": "Single Varied Thrush in the original diagonal feeding pose; bill, wings, tail and visible feet retained with a short branch."
+    },
+    {
+      "slug": "buteo-jamaicensis",
+      "scientific_name": "Buteo jamaicensis",
+      "common_name": "Red-tailed Hawk",
+      "source_key": "fuertes",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Annual_report_(1912)_(18425065022).jpg",
+      "source_sha256": "0760c725dc0d2c67840a0ad2106e77c21ff0614639ed2b4a4b86bee822c1e29f",
+      "pixel_sha256": "52db86b3cfc002d999927f765b1f2a2503d4094f2d682bea1abdce0ef5ccb162",
+      "width": 476,
+      "height": 1035,
+      "figure_review": "Single upright hawk in left-facing profile; complete head, folded wings, barred tail and both feet retained on the source post."
+    },
+    {
+      "slug": "nycticorax-nycticorax",
+      "scientific_name": "Nycticorax nycticorax",
+      "common_name": "Black-crowned Night Heron",
+      "source_key": "gould",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GouldBirdsEuropeIVCommon_Night_Heron.jpg",
+      "source_sha256": "d08346318012c4f80fa6e9e43f3b10e4966df95195d66a8e8e504bab40e80280",
+      "pixel_sha256": "b2bff88e2f0db4f770fbab9d6cd4007012725e7e31adba1878e0e33bbf12dae5",
+      "width": 1200,
+      "height": 791,
+      "figure_review": "Single night heron standing left-facing; bill, folded wings, legs and feet retained with a small source marsh patch."
+    },
+    {
+      "slug": "junco-hyemalis",
+      "scientific_name": "Junco hyemalis",
+      "common_name": "Dark-eyed Junco",
+      "source_key": "audubon",
+      "source_url": "https://www.audubon.org/art/birds-of-america/snow-bird",
+      "source_sha256": "c255feadf7e0d6cd7c3a2dbd792acf37bb7e170a16c639b11abfc7c51e3617a6",
+      "pixel_sha256": "23d095efcdfb34558b3ab62cb186247a5e7c18feebce2dd17388f19c0fd10688",
+      "width": 1200,
+      "height": 736,
+      "figure_review": "Single junco in right-facing profile; bill, wings, long tail and visible feet retained with a narrow source twig."
+    },
+    {
+      "slug": "tachycineta-thalassina",
+      "scientific_name": "Tachycineta thalassina",
+      "common_name": "Violet-green Swallow",
+      "source_key": "audubon",
+      "source_url": "https://commons.wikimedia.org/wiki/File:385_I._Bank_Swallow_-_2._Violet-green_Swallow.jpg",
+      "source_sha256": "0183eeee1561535f7f6c8b16f0131ec308aef374769c99c72dfc7285d764d55f",
+      "pixel_sha256": "32d7f0f700c798d7516fc078227ea1d56ce12cc38651f8d819859c320837dbd0",
+      "width": 1009,
+      "height": 1054,
+      "figure_review": "Single swallow in flight in the original steep banking pose; head, both wings, body and forked tail are complete."
+    },
+    {
+      "slug": "selasphorus-platycercus",
+      "scientific_name": "Selasphorus platycercus",
+      "common_name": "Broad-tailed Hummingbird",
+      "source_key": "swainson",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Selasphorus_platycercus_1841.jpg",
+      "source_sha256": "136408672c25fbb9bc502156c0dd9f5bd8dae9b9f6c904ef1ad822d3acfc26cc",
+      "pixel_sha256": "cd59f0120b65ff0cf06bb7b67a2e2487578337a6d606810413f922679d7fd552",
+      "width": 1174,
+      "height": 1200,
+      "figure_review": "Single upright male hummingbird in left-facing profile; bill, folded wings, tail and feet retained with a short leafy perch."
+    },
+    {
+      "slug": "setophaga-coronata",
+      "scientific_name": "Setophaga coronata",
+      "common_name": "Yellow-rumped Warbler",
+      "source_key": "audubon",
+      "source_url": "https://www.audubon.org/art/birds-of-america/yellow-crown-warbler",
+      "source_sha256": "b9ca2e15021e19441a8688ac7b1503bdff713aecc2299ec5a563b1bc28e0787a",
+      "pixel_sha256": "68b445b413f3f3cd12bf513ee77a77129a8166fbf3ef743f6706b43022240aed",
+      "width": 1200,
+      "height": 917,
+      "figure_review": "Single warbler in left-facing profile; bill, wings, yellow rump, tail and visible feet retained on a small twig."
+    },
+    {
+      "slug": "dryocopus-pileatus",
+      "scientific_name": "Dryocopus pileatus",
+      "common_name": "Pileated Woodpecker",
+      "source_key": "fuertes",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:Birds_of_New_York_(1912)#/media/File:Annual_report_(1912)_(18243151539).jpg",
+      "source_sha256": "377c3f53d16fe9d0b4c9a6921a8dd6e8d505790cf023fb5520ef581edace98ec",
+      "pixel_sha256": "c932aaaa6d3cb121356ca22710e57f221918b5730bbac497259122dfba526687",
+      "width": 701,
+      "height": 1200,
+      "figure_review": "Single woodpecker climbing head-up; bill, red crest, wings, tail and gripping feet retained with a narrow trunk section."
+    },
+    {
+      "slug": "gavia-immer-2",
+      "scientific_name": "Gavia immer",
+      "common_name": "Common Loon",
+      "source_key": "vonwright",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00168.jpg",
+      "source_sha256": "fe1830f1fc8c0bab09a070842b96114fc926953bf16a91f76f0b7d501203e605",
+      "pixel_sha256": "232ae11c435e1fca3f929e5cd082a49d024e3d24baa08c03b1026c540437b374",
+      "width": 1200,
+      "height": 588,
+      "figure_review": "Single swimming loon in right-facing profile; bill, neck, body, folded wing and tail retained with a small water patch."
+    },
+    {
+      "slug": "sayornis-nigricans",
+      "scientific_name": "Sayornis nigricans",
+      "common_name": "Black Phoebe",
+      "source_key": "swainson",
+      "source_url": "https://commons.wikimedia.org/wiki/File:A_selection_of_the_birds_of_Brazil_and_Mexico_(Plate_69)_(5977794422).jpg",
+      "source_sha256": "9797013bc9af7dc6bebb62f1723ce61b975d93b414ea71ab02aae7cfc68d0a56",
+      "pixel_sha256": "d23d5d840ddc5669ae5167cf9ec95104456b019587f1e84a8e41744e142fe2ff",
+      "width": 864,
+      "height": 1200,
+      "figure_review": "Single phoebe in left-facing profile; bill, wings, long tail and visible feet retained with a short branch."
+    },
+    {
+      "slug": "myadestes-townsendi",
+      "scientific_name": "Myadestes townsendi",
+      "common_name": "Townsend's Solitaire",
+      "source_key": "audubon",
+      "source_url": "https://www.audubon.org/art/birds-of-america/little-tawny-thrush-ptiliogonys-townsendi-canada-jay",
+      "source_sha256": "51c2820bbeb8ee9310732f3032b74ad0fdf486323ec4ad2ff86d5322d40b523f",
+      "pixel_sha256": "d2c400963a4baa02e4d60f1a325d5d044f760c1881f0ad35e27cc43061479356",
+      "width": 1058,
+      "height": 903,
+      "figure_review": "Single solitaire in left-facing profile with raised wings; bill, wings, long tail and visible feet retained on a short branch."
+    },
+    {
+      "slug": "callipepla-californica",
+      "scientific_name": "Callipepla californica",
+      "common_name": "California Quail",
+      "source_key": "audubon",
+      "source_url": "https://www.audubon.org/art/birds-of-america/california-partridge",
+      "source_sha256": "170674b00d445dabf4924f40b092ae8741941ba85a347a305baa52656a97a2bd",
+      "pixel_sha256": "18a38c85d6e1433ab0ada50f7295e5a80f6ec8e966a2c01ee17b08e9a3e5472c",
+      "width": 1052,
+      "height": 1200,
+      "figure_review": "Single male quail in left-facing profile; plume, bill, body, folded wing, tail and both feet are complete."
+    },
+    {
+      "slug": "pipilo-maculatus",
+      "scientific_name": "Pipilo maculatus",
+      "common_name": "Spotted Towhee",
+      "source_key": "jardine",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Flickr_-_BioDivLibrary_-_n208_w1150_(1).jpg",
+      "source_sha256": "c3c25be807eacf150860eedd62fb2c8a7cafdbe8aa3603145550c4b4337e0787",
+      "pixel_sha256": "bf1e26453bad075e9cddc94b9ecedbd3e28557a19638f4afd009b9262ae3b285",
+      "width": 1010,
+      "height": 936,
+      "figure_review": "Single towhee in left-facing profile; bill, spotted wings, long tail and both feet retained with a short perch."
+    },
+    {
+      "slug": "falco-sparverius",
+      "scientific_name": "Falco sparverius",
+      "common_name": "American Kestrel",
+      "source_key": "audubon",
+      "source_url": "https://www.audubon.org/art/birds-of-america/american-sparrow-hawk",
+      "source_sha256": "37ebc126d0012067d896ffa2b5f0cd8f91a048eb278f28b5d17654d6d105ed98",
+      "pixel_sha256": "79ea6e909e61168d73764e8f5016cbe77e27c1bffc713356a1497c3bfa4eac95",
+      "width": 908,
+      "height": 1182,
+      "figure_review": "Single upright kestrel in left-facing profile; bill, wings, barred tail and both feet retained on the source branch."
+    },
+    {
+      "slug": "corthylio-calendula",
+      "scientific_name": "Corthylio calendula",
+      "common_name": "Ruby-crowned Kinglet",
+      "source_key": "audubon",
+      "source_url": "https://www.audubon.org/art/birds-of-america/ruby-crowned-wren",
+      "source_sha256": "dfdf37ac48f15e257b200cc0780583adee8dba306a41c940439ae13acc62051a",
+      "pixel_sha256": "f655ab36698c9c1fc4a9ec4d0982f2525990af8c65c803b33626b1bb7b1b2d43",
+      "width": 664,
+      "height": 413,
+      "figure_review": "Single kinglet in right-facing profile; bill, raised ruby crown, wings, tail and both feet retained on a narrow twig."
+    },
+    {
+      "slug": "psaltriparus-minimus-2",
+      "scientific_name": "Psaltriparus minimus",
+      "common_name": "Bushtit",
+      "source_key": "fuertes",
+      "source_url": "https://archive.org/details/birdsofcaliforni30beal/page/n7/mode/1up",
+      "source_sha256": "c935ff4a91b5f75b458e742f9842b001bfecaf79226eb68b3905da73c9706dbf",
+      "pixel_sha256": "faf082f87ecb0746cc523d7b0cd32428b4787ad23d5f3fa4f7ec8fc5d8623038",
+      "width": 915,
+      "height": 1102,
+      "figure_review": "Single compact bushtit in right-facing profile; bill, wings, long tail and both feet are visible without a second bird."
+    },
+    {
+      "slug": "pinicola-enucleator-2",
+      "scientific_name": "Pinicola enucleator",
+      "common_name": "Pine Grosbeak",
+      "source_key": "vonwright",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00228.jpg",
+      "source_sha256": "16c2c8e2b50edb4ae79f1e0caa520b6b89f4171de7fb65f52d7a942000435709",
+      "pixel_sha256": "1a13d6228d5ab3dbc15046f610408f6a59aa631646d738b0e677301a68cdfb0f",
+      "width": 1193,
+      "height": 1013,
+      "figure_review": "Single female-type grosbeak in left-facing profile; bill, wings, tail and both feet retained on a short branch."
+    },
+    {
+      "slug": "thryomanes-bewickii",
+      "scientific_name": "Thryomanes bewickii",
+      "common_name": "Bewick's Wren",
+      "source_key": "audubon",
+      "source_url": "https://commons.wikimedia.org/wiki/File:18_Bewick%27s_Wren.jpg",
+      "source_sha256": "95f9de7b38d798564682037de69ebc5a74ab8656358fe1ec4f0b4b6b9cdbbba7",
+      "pixel_sha256": "60de893db8d90f59ed11779843b2787aa680cb11eaa290af4e7ba2e1a3df21be",
+      "width": 801,
+      "height": 1200,
+      "figure_review": "Single wren in left-facing climbing pose; bill, wings, barred raised tail and gripping feet retained with a trunk strip."
+    },
+    {
+      "slug": "quiscalus-quiscula",
+      "scientific_name": "Quiscalus quiscula",
+      "common_name": "Common Grackle",
+      "source_key": "vieillot",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Quiscalus_purpureus_-_1825-1834_-_Print_-_Iconographia_Zoologica_-_Special_Collections_University_of_Amsterdam_-_UBA01_IZ15800301.tif",
+      "source_sha256": "c524603e86a1923308a9c1e83848c0ba78304c58e73afc53b4f8f4f9327e0271",
+      "pixel_sha256": "667cea3c8ba76d6c423affba6e6dd443fcbc00e2c78df4ea2fa1e5f84f360da3",
+      "width": 980,
+      "height": 1200,
+      "figure_review": "Single iridescent grackle in right-facing profile; bill, wings, long tail and both feet retained on a short branch."
+    },
+    {
+      "slug": "anser-albifrons-2",
+      "scientific_name": "Anser albifrons",
+      "common_name": "Greater White-fronted Goose",
+      "source_key": "vonwright",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00286.jpg",
+      "source_sha256": "393886696111e438f148d80377124fb5f88651af3470a2344e246491f678f4b9",
+      "pixel_sha256": "fe1a9c5ea63ba9ec65fb837d58e53503a2cf2423d7eafd9d0ed0736a6f771a8c",
+      "width": 1200,
+      "height": 1065,
+      "figure_review": "Single standing goose in left-facing profile; bill, folded wing, tail and both orange feet retained with a small ground patch."
+    },
+    {
+      "slug": "branta-canadensis",
+      "scientific_name": "Branta canadensis",
+      "common_name": "Canada Goose",
+      "source_key": "morris",
+      "source_url": "https://commons.wikimedia.org/wiki/File:British_game_birds_and_wildfowl_(Plate_32)_(8093637854).jpg",
+      "source_sha256": "5577e3b76644e615edd45066bb8a9b20f2269978592e69c69849769cc01374d6",
+      "pixel_sha256": "c617e0872134e2f906465793f52965c4058d25b1f1b7aa2d9da58e8e0110c035",
+      "width": 1200,
+      "height": 1012,
+      "figure_review": "Single standing Canada Goose in right-facing profile; bill, neck, body, folded wing, tail and both feet are complete."
+    },
+    {
+      "slug": "athene-cunicularia",
+      "scientific_name": "Athene cunicularia",
+      "common_name": "Burrowing Owl",
+      "source_key": "audubon",
+      "source_url": "https://media.audubon.org/boa_illustration/plate-432-burrowing-owl.jpg",
+      "source_sha256": "2e39dcc78e53ae204e51175cf0d8ea0bad35c2354645b2d4591a8be2866aa900",
+      "pixel_sha256": "6ed531c54735706fb2fb818c219cb09a4f2f1d50c90576d2e0f91af6e2fb2486",
+      "width": 930,
+      "height": 1200,
+      "figure_review": "Single owl in left-facing profile; head, body, folded wings, tail and long legs retained on a short original perch."
+    },
+    {
+      "slug": "tyrannus-tyrannus",
+      "scientific_name": "Tyrannus tyrannus",
+      "common_name": "Eastern Kingbird",
+      "source_key": "fuertes",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:Birds_of_New_York_(1912)#/media/File:Annual_report_(1912)_(18431073241).jpg",
+      "source_sha256": "bc152fc148eccf4625e2af7b23762f4f3b79260465a3aee49d9e982f4b97f7b2",
+      "pixel_sha256": "e6ac41f99f7a3eba5fb66cfa59301cdc4dc67c6140f5eae56c932fe35a28badc",
+      "width": 945,
+      "height": 1200,
+      "figure_review": "Single kingbird in left-facing profile; bill, wings, white-tipped tail and both feet retained on a lichen-covered perch."
+    },
+    {
+      "slug": "falco-peregrinus-2",
+      "scientific_name": "Falco peregrinus",
+      "common_name": "Peregrine Falcon",
+      "source_key": "vonwright",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bird_illustration_from_Svenska_F%C3%A5glar_(Swedish_Birds)_by_the_von_Wright_brothers_from_rawpixel%27s_original_edition_of_the_publication_00082.jpg",
+      "source_sha256": "f33a6ae9199f13cad88c9619caf1fc86928b94c4d757778b453232ddc083e8a5",
+      "pixel_sha256": "7f762f4ab892051a3ac33b6d1d10cf3ff85a2aa64d3d4ba93d77abb572bd6e04",
+      "width": 999,
+      "height": 1200,
+      "figure_review": "Single upright falcon in right-facing profile; bill, wings, tail and both feet retained with a small rock base."
+    },
+    {
+      "slug": "sitta-carolinensis",
+      "scientific_name": "Sitta carolinensis",
+      "common_name": "White-breasted Nuthatch",
+      "source_key": "audubon",
+      "source_url": "https://media.audubon.org/boa_illustration/plate-152-white-breasted-black-capped-nuthatch.jpg",
+      "source_sha256": "f30c26ba7130f0061b71f15d1150e2daee3a38aead775632f78ac1b39f3e2c75",
+      "pixel_sha256": "bf3b26e2d85565c19180ff4b47e576d1fdd10b0338a821afdb5ad234ae7543a1",
+      "width": 1200,
+      "height": 896,
+      "figure_review": "Single nuthatch in its natural head-down climbing pose; bill, wings, tail and gripping feet retained with a narrow branch."
+    }
+  ]
+}

@@ -1,0 +1,1128 @@
+{
+  "schema_version": 1,
+  "coordinate_space": "normalized full prepared RGBA; endpoints inclusive",
+  "assets": {
+    "house-finch-cassin-male": {
+      "sha256": "e265ea21ea15c1930078d187d9f370095dcd89f237ca90657153a37bc4b61814",
+      "size": [
+        1042,
+        713
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.205,
+            1
+          ],
+          [
+            0.228,
+            0.89
+          ],
+          [
+            0.253,
+            0.86
+          ],
+          [
+            0.267,
+            0.876
+          ],
+          [
+            0.235,
+            0.985
+          ]
+        ],
+        [
+          [
+            0.28,
+            0.86
+          ],
+          [
+            0.3,
+            0.82
+          ],
+          [
+            0.41,
+            0.757
+          ],
+          [
+            0.42,
+            0.775
+          ],
+          [
+            0.315,
+            0.836
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Lower grass stem and exposed diagonal section removed; toes retained to visible boundary.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "house-finch-cassin-female": {
+      "sha256": "6632dc7fd5670053e44330fa324f84b2db830630a0f057ee437684df2fe15c68",
+      "size": [
+        437,
+        1111
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.26,
+            0.625
+          ],
+          [
+            0.79,
+            0.425
+          ],
+          [
+            0.8,
+            0.44
+          ],
+          [
+            0.275,
+            0.638
+          ]
+        ],
+        [
+          [
+            0.65,
+            0.61
+          ],
+          [
+            0.91,
+            0.585
+          ],
+          [
+            0.92,
+            0.598
+          ],
+          [
+            0.67,
+            0.623
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Narrow diagonal and horizontal stems crossing the bird removed from measurement; source-occluded feathers not reconstructed.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "cedar-waxwing-fuertes": {
+      "sha256": "b8b0ca0bda4d9a1733bf0db5a10b881bd6d5d084d4165d571245b9c9d471784d",
+      "size": [
+        631,
+        1116
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "black-capped-chickadee-fuertes": {
+      "sha256": "8dbe3228e8f15619acacc597e615a106c74c87e81cb23b8ebf46e776e44c3e69",
+      "size": [
+        594,
+        821
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.561551,
+            0.673171
+          ],
+          [
+            0.588533,
+            0.67561
+          ],
+          [
+            0.625632,
+            0.697561
+          ],
+          [
+            0.657673,
+            0.720732
+          ],
+          [
+            0.563238,
+            0.737805
+          ],
+          [
+            0.55312,
+            0.723171
+          ]
+        ],
+        [
+          [
+            0.659359,
+            0.667073
+          ],
+          [
+            0.738617,
+            0.645122
+          ],
+          [
+            0.785835,
+            0.629268
+          ],
+          [
+            0.801012,
+            0.658537
+          ],
+          [
+            0.821248,
+            0.679268
+          ],
+          [
+            0.743676,
+            0.706098
+          ],
+          [
+            0.711636,
+            0.686585
+          ],
+          [
+            0.679595,
+            0.678049
+          ]
+        ],
+        [
+          [
+            0.824621,
+            0.609756
+          ],
+          [
+            0.878583,
+            0.597561
+          ],
+          [
+            0.91231,
+            0.606098
+          ],
+          [
+            0.908938,
+            0.635366
+          ],
+          [
+            0.86172,
+            0.657317
+          ],
+          [
+            0.844857,
+            0.634146
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Independent visual refinement on original prepared RGBA composited onto white, with enlarged foot/perch coordinate inspection.",
+        "notes": "Perch split into three visible segments to retain both gripping toes and their lower tips.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "starling-gould-summer": {
+      "sha256": "4f730d482924d429408a25326f48ee6765b45241742b81445d58c9a6916b4eab",
+      "size": [
+        953,
+        1400
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "starling-gould-winter": {
+      "sha256": "ae05e23126dc10e99372c0ceb592e654088d044ac3dc3ad5b589581207c037f2",
+      "size": [
+        1400,
+        1132
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "robin-kittlitz": {
+      "sha256": "01c7ef92b5d8effeac008f195747fd0568140af34b349f1b84a4e1be545ffdcf",
+      "size": [
+        941,
+        1028
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.407447,
+            0.753651
+          ],
+          [
+            0.52234,
+            0.789679
+          ],
+          [
+            0.524468,
+            0.81889
+          ],
+          [
+            0.406383,
+            0.780915
+          ]
+        ],
+        [
+          [
+            0.554255,
+            0.800389
+          ],
+          [
+            0.67234,
+            0.838364
+          ],
+          [
+            0.66383,
+            0.865628
+          ],
+          [
+            0.610638,
+            0.847128
+          ],
+          [
+            0.596809,
+            0.836417
+          ],
+          [
+            0.554255,
+            0.823759
+          ]
+        ],
+        [
+          [
+            0.690426,
+            0.851022
+          ],
+          [
+            0.728723,
+            0.864654
+          ],
+          [
+            0.728723,
+            0.886076
+          ],
+          [
+            0.691489,
+            0.878286
+          ]
+        ],
+        [
+          [
+            0.757447,
+            0.877313
+          ],
+          [
+            0.920213,
+            0.930867
+          ],
+          [
+            0.906383,
+            0.962999
+          ],
+          [
+            0.761702,
+            0.914314
+          ],
+          [
+            0.770213,
+            0.899708
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Independent visual refinement on original prepared RGBA composited onto white, with enlarged foot/perch coordinate inspection.",
+        "notes": "Twig split around each yellow foot and curled toes; branch-toe junctions intentionally conservative.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "rock-pigeon-keulemans": {
+      "sha256": "310e516ecb07423d9c96439b4092bbc97f6610b3592f155d7d36b41e97078fae",
+      "size": [
+        944,
+        639
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "northern-flicker-fuertes": {
+      "sha256": "d180d193ae1dc529d4fe19ce2df6dfe0fd50fe40dd574e901b86c9befafb0a3f",
+      "size": [
+        686,
+        1284
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "american-goldfinch-fuertes": {
+      "sha256": "5c89fc12568cafc9a909449a8b95261b32522095a8700733510a461d732997d0",
+      "size": [
+        677,
+        566
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "american-crow-audubon": {
+      "sha256": "372ad901cfa9e3f7a196ca7fefcb7c2e7e14fafbc18e4420dbc88f202c5cdcd6",
+      "size": [
+        970,
+        785
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "red-breasted-nuthatch-seton": {
+      "sha256": "d96abd786955d8fec37b35fdb7ce701f67fa6ec01c2b149ec0fa7e3ee02af9fa",
+      "size": [
+        502,
+        898
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "evening-grosbeak-brooks-female": {
+      "sha256": "c75bfbde1dc047ba96a52c5601ef24b64b9fa0a97fa0db0432121b0abfd832c1",
+      "size": [
+        1016,
+        1296
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.19,
+            0.72
+          ],
+          [
+            0.61,
+            0.61
+          ],
+          [
+            0.64,
+            0.65
+          ],
+          [
+            0.24,
+            0.79
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Thick brown perch across the lower belly excluded; visible wing and tail retained.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "killdeer-seton": {
+      "sha256": "3073d6f10493f2a37112821c42c03c1b4fa87f401d069ba70e35b05b5e15b564",
+      "size": [
+        1044,
+        959
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "lesser-goldfinch-brooks-male": {
+      "sha256": "b9dfd07648ab773b1adfaa60844ab45ad6e7db7df2282149a18794e99f64bae5",
+      "size": [
+        704,
+        538
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.635,
+            0.795
+          ],
+          [
+            0.81,
+            0.95
+          ],
+          [
+            0.82,
+            0.98
+          ],
+          [
+            0.69,
+            0.85
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Exposed brown twig below the foot excluded; small overlapping toes remain in the visible bird mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "rufous-hummingbird-gould-male": {
+      "sha256": "bd621bfc99b8adab5522b71e9570e012cbbc98f4ec51583a6dc1317f85c6ef87",
+      "size": [
+        987,
+        517
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "collared-dove-keulemans": {
+      "sha256": "391353307cfcef6319d78b59ab4719c8c0092fe149140242ad5f9137e5e5d95f",
+      "size": [
+        1382,
+        1400
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.497466,
+            0.392423
+          ],
+          [
+            0.511224,
+            0.394568
+          ],
+          [
+            0.532223,
+            0.423874
+          ],
+          [
+            0.544533,
+            0.446748
+          ],
+          [
+            0.569153,
+            0.462473
+          ],
+          [
+            0.599566,
+            0.474625
+          ],
+          [
+            0.607531,
+            0.487491
+          ],
+          [
+            0.6126,
+            0.50965
+          ],
+          [
+            0.603186,
+            0.52752
+          ],
+          [
+            0.590152,
+            0.513224
+          ],
+          [
+            0.566256,
+            0.505361
+          ],
+          [
+            0.545981,
+            0.498213
+          ],
+          [
+            0.52643,
+            0.481058
+          ],
+          [
+            0.517017,
+            0.460329
+          ],
+          [
+            0.506879,
+            0.441744
+          ],
+          [
+            0.503983,
+            0.416726
+          ]
+        ],
+        [
+          [
+            0.664012,
+            0.532523
+          ],
+          [
+            0.675597,
+            0.54396
+          ],
+          [
+            0.685011,
+            0.563974
+          ],
+          [
+            0.6937,
+            0.576841
+          ],
+          [
+            0.695873,
+            0.596855
+          ],
+          [
+            0.682839,
+            0.603288
+          ],
+          [
+            0.669804,
+            0.592566
+          ],
+          [
+            0.65677,
+            0.5797
+          ],
+          [
+            0.648805,
+            0.570407
+          ],
+          [
+            0.658943,
+            0.557541
+          ]
+        ],
+        [
+          [
+            0.721217,
+            0.628306
+          ],
+          [
+            0.73063,
+            0.63045
+          ],
+          [
+            0.749457,
+            0.651894
+          ],
+          [
+            0.742216,
+            0.664761
+          ],
+          [
+            0.732802,
+            0.662616
+          ],
+          [
+            0.716148,
+            0.639743
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Independent visual refinement on original prepared RGBA composited onto white, with enlarged foot/perch coordinate inspection.",
+        "notes": "Curved green perch traced in three exposed sections, preserving overlapping pink toes.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "downy-woodpecker-seton": {
+      "sha256": "6cf354fae0d7e8d9d3fb0bff100c41d0532b357cd86efba42d90c7f354c2fee7",
+      "size": [
+        568,
+        1400
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "western-tanager-fuertes-male": {
+      "sha256": "8a2f4ba4bb94b496bcc8ba9566f8d8919dcffa9a55a2f14a14ffef19085b8010",
+      "size": [
+        1131,
+        1172
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.51,
+            0.875
+          ],
+          [
+            0.71,
+            0.878
+          ],
+          [
+            0.72,
+            0.892
+          ],
+          [
+            0.51,
+            0.89
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Thin horizontal perch excluded; dark legs and toes retained.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "canyon-wren-cassin": {
+      "sha256": "b6b97d7f8d6737742ae46d01ec197b455315883fd5ae7d847c256b5949dd4e99",
+      "size": [
+        887,
+        700
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "song-sparrow-fuertes": {
+      "sha256": "f9fddfa0422cffe315587e9a6eefa32784e52144dc076d5d16ff4a2c137ad276",
+      "size": [
+        899,
+        908
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "mountain-chickadee-fuertes": {
+      "sha256": "ad1c1fd0c3a9cfb73d830c6e60771d9f4a85d0288aa71c8339b2afae7b7cd777",
+      "size": [
+        1305,
+        1393
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0,
+            0.586925
+          ],
+          [
+            0.030675,
+            0.55819
+          ],
+          [
+            0.128067,
+            0.54023
+          ],
+          [
+            0.159509,
+            0.520833
+          ],
+          [
+            0.22316,
+            0.503592
+          ],
+          [
+            0.261503,
+            0.489224
+          ],
+          [
+            0.269172,
+            0.512213
+          ],
+          [
+            0.273006,
+            0.522989
+          ],
+          [
+            0.243865,
+            0.535201
+          ],
+          [
+            0.18635,
+            0.552443
+          ],
+          [
+            0.148006,
+            0.568247
+          ],
+          [
+            0.108896,
+            0.586207
+          ],
+          [
+            0.069785,
+            0.603448
+          ],
+          [
+            0.043712,
+            0.618534
+          ],
+          [
+            0.047546,
+            0.698994
+          ],
+          [
+            0.033742,
+            0.711925
+          ],
+          [
+            0.013037,
+            0.673851
+          ],
+          [
+            0.007669,
+            0.637931
+          ]
+        ],
+        [
+          [
+            0.341258,
+            0.468391
+          ],
+          [
+            0.352761,
+            0.465517
+          ],
+          [
+            0.392638,
+            0.460489
+          ],
+          [
+            0.424847,
+            0.444684
+          ],
+          [
+            0.447853,
+            0.440374
+          ],
+          [
+            0.489264,
+            0.4375
+          ],
+          [
+            0.526074,
+            0.430316
+          ],
+          [
+            0.562117,
+            0.428161
+          ],
+          [
+            0.595092,
+            0.403736
+          ],
+          [
+            0.611196,
+            0.430316
+          ],
+          [
+            0.579755,
+            0.457615
+          ],
+          [
+            0.529141,
+            0.476293
+          ],
+          [
+            0.498466,
+            0.48204
+          ],
+          [
+            0.467025,
+            0.491379
+          ],
+          [
+            0.432515,
+            0.497845
+          ],
+          [
+            0.395706,
+            0.502874
+          ],
+          [
+            0.357362,
+            0.507184
+          ],
+          [
+            0.339724,
+            0.514368
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Independent visual refinement on original prepared RGBA composited onto white, with enlarged foot/perch coordinate inspection.",
+        "notes": "Hooked left branch and exposed right section traced separately, retaining toes where the foot crosses the branch.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "black-billed-magpie-fuertes": {
+      "sha256": "564277ef509a0f590442f6c1015a03bba4187766fdb5151e2916fb70d6333c99",
+      "size": [
+        639,
+        1400
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "great-horned-owl-audubon": {
+      "sha256": "a3866c0ba08703c1c4dcade16ec57c5cad74f8147b0e523624c42730eb229c74",
+      "size": [
+        892,
+        1400
+      ],
+      "polygons": [],
+      "exclude": [
+        [
+          [
+            0.325477,
+            0.864189
+          ],
+          [
+            0.372615,
+            0.869192
+          ],
+          [
+            0.419753,
+            0.881344
+          ],
+          [
+            0.461279,
+            0.889207
+          ],
+          [
+            0.459035,
+            0.89564
+          ],
+          [
+            0.43771,
+            0.904217
+          ],
+          [
+            0.447811,
+            0.922802
+          ],
+          [
+            0.328844,
+            0.903503
+          ],
+          [
+            0.300786,
+            0.894925
+          ]
+        ],
+        [
+          [
+            0.47138,
+            0.924946
+          ],
+          [
+            0.561167,
+            0.939242
+          ],
+          [
+            0.619529,
+            0.949964
+          ],
+          [
+            0.626263,
+            0.966405
+          ],
+          [
+            0.578002,
+            0.957827
+          ],
+          [
+            0.510662,
+            0.943531
+          ],
+          [
+            0.47138,
+            0.937098
+          ]
+        ],
+        [
+          [
+            0.748597,
+            0.93138
+          ],
+          [
+            0.810325,
+            0.937098
+          ],
+          [
+            0.875421,
+            0.932094
+          ],
+          [
+            0.941639,
+            0.916369
+          ],
+          [
+            0.98541,
+            0.919943
+          ],
+          [
+            1,
+            0.92852
+          ],
+          [
+            0.991021,
+            0.945675
+          ],
+          [
+            0.960718,
+            0.957827
+          ],
+          [
+            0.915825,
+            0.96569
+          ],
+          [
+            0.851852,
+            0.970693
+          ],
+          [
+            0.796857,
+            0.969979
+          ],
+          [
+            0.765432,
+            0.972123
+          ],
+          [
+            0.757576,
+            0.962831
+          ],
+          [
+            0.746352,
+            0.948535
+          ]
+        ]
+      ],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Independent visual refinement on original prepared RGBA composited onto white, with enlarged foot/perch coordinate inspection.",
+        "notes": "Exposed branch segments traced around feathered feet and curled talons; uncertain contact pixels retained as bird.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    },
+    "great-blue-heron-butler": {
+      "sha256": "6ae946a22c931b1c33026e6d17cf781ce4725d5c9abe568a115fbc3ba475b412",
+      "size": [
+        971,
+        1400
+      ],
+      "polygons": [],
+      "exclude": [],
+      "review": {
+        "status": "reviewed",
+        "date": "2026-10-14",
+        "method": "Visual review of full prepared RGBA on white; normalized exclusion polygons over visible perches.",
+        "notes": "Reviewed complete bird including visible bill, wings, tail and feet; no substantial external perch remains, so the prepared alpha is the subject mask.",
+        "limitation": "Visible-ink estimate, not biological body area. Anti-aliased edge pixels and small occluded toe/perch boundaries are approximate."
+      }
+    }
+  }
+}
