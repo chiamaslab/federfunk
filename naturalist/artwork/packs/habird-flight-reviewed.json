@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "id": "habird-flight-reviewed",
+  "kind": "habird-flight-png-v1",
+  "title": "AvianVisitors / HABirdDashboard · reviewed flying birds",
+  "description": "Eleven reviewed flying-bird variants from the artwork family matched in Thomas's frame photo. These are upstream AI-generated Japanese-print-style illustrations, not historical plates. Original drawings remain available.",
+  "revision": "3f3e2e78aa6537a58a51df05ac4b34dcdb118733",
+  "source_url": "https://github.com/adamoberley/HABirdDashboard/tree/3f3e2e78aa6537a58a51df05ac4b34dcdb118733/avian/assets/illustrations",
+  "rights": "MIT",
+  "rights_url": "https://github.com/adamoberley/HABirdDashboard/blob/3f3e2e78aa6537a58a51df05ac4b34dcdb118733/LICENSE",
+  "creator": "Teddy Warner / AvianVisitors; Adam Oberley and HABirdDashboard contributors (AI-generated illustration)",
+  "attribution": "Copyright (c) 2026 Adam Oberley, Teddy Warner, and HABirdDashboard contributors. Original illustration library: Teddy Warner / AvianVisitors. AI-generated Japanese-print-style artwork, reused under the MIT License.",
+  "attribution_url": "https://github.com/adamoberley/HABirdDashboard/blob/3f3e2e78aa6537a58a51df05ac4b34dcdb118733/README.md#credits--license",
+  "license_notice": "MIT License\n\nCopyright (c) 2026 Adam Oberley, Teddy Warner, and HABirdDashboard contributors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+  "changes": "Upstream generated illustration and background extraction retained exactly. FederFunk adds source, licence and credit metadata only; decoded RGBA pixels, alpha, pose and colours are unchanged. Resizing, composition and display dithering happen at render time.",
+  "review_defaults": {
+    "date": "2026-10-29",
+    "scope": "Each native alpha image was inspected at full size and composited on a paper contact sheet for diagnostic field marks, number of birds, wings, feet, tail, bounds, stray perches and retained background. Scientific names match recorded station labels. These are stylized generated illustrations, not untouched historical plates or confirmation of a sighting. Flight and sex variants are artistic choices, never conclusions drawn from audio confidence."
+  },
+  "excluded_review_candidates": [
+    {
+      "slug": "poecile-gambeli-2",
+      "reason": "The reviewed candidate omits the diagnostic white eyebrow of Mountain Chickadee and resembles Black-capped Chickadee; not admitted or relabelled."
+    }
+  ],
+  "assets": [
+    {
+      "slug": "poecile-atricapillus-2",
+      "scientific_name": "Poecile atricapillus",
+      "common_name": "Black-capped Chickadee",
+      "source_sha256": "0cdb3ee351fe9444efaa6934fe1051cedb70097ad26b6220af22d9802121431f",
+      "pixel_sha256": "e5e7ccbd6229de09b4fba2dd203ce4f0f12072b798b818ab538a85baeca6856e",
+      "width": 618,
+      "height": 551,
+      "species_review": "Black cap and bib, white cheek, gray flight feathers, buff flanks and short pointed bill match Black-capped Chickadee. The native pose closely matches the flying chickadee at the photo's lower left.",
+      "figure_review": "Single left-facing chickadee with raised right wing and extended left wing, curled feet and complete tail."
+    },
+    {
+      "slug": "sitta-canadensis-2",
+      "scientific_name": "Sitta canadensis",
+      "common_name": "Red-breasted Nuthatch",
+      "source_sha256": "9870e1314545b85298446f17c51015db11568c05c2cafa9ec47282ec3abb1815",
+      "pixel_sha256": "1925973e630fc9e8e72b8c9a686cd91ac014af8f943b6d6c511bad98e251ea8f",
+      "width": 562,
+      "height": 524,
+      "species_review": "Black cap and eye stripe, white eyebrow, blue-gray upperparts, straight slender bill and rusty breast match Red-breasted Nuthatch.",
+      "figure_review": "Single left-facing nuthatch, wings raised, feet tucked, full bill and short tail retained."
+    },
+    {
+      "slug": "haemorhous-mexicanus-2",
+      "scientific_name": "Haemorhous mexicanus",
+      "common_name": "House Finch",
+      "source_sha256": "3a8f07f7edde5c3426ca6c099b144abed00c30c9e6389c272f594e37756d6f48",
+      "pixel_sha256": "4f875175cc356e1ccf96a8102e40258a39225f2d2faff873320af9e35cad2cae",
+      "width": 707,
+      "height": 578,
+      "species_review": "Red forehead/face/chest, streaked pale belly, brown wings and stout seed-eating bill match a male House Finch. This is the red-headed flying bird at the centre of the supplied photo; sex/pose are artistic and are not inferred from the detection.",
+      "figure_review": "Single right-facing finch with one wing raised and the other extended, curled feet, complete tail and bill."
+    },
+    {
+      "slug": "melospiza-melodia-2",
+      "scientific_name": "Melospiza melodia",
+      "common_name": "Song Sparrow",
+      "source_sha256": "cca76bcf259c64e1acc0e95a708f1875abd1605f765e0d44263acb11c4c14eb8",
+      "pixel_sha256": "b628bfe0758b3d719369f5c5ad0941f9276a560c31062eae81b0933f0e0642e3",
+      "width": 567,
+      "height": 652,
+      "species_review": "Brown crown/eye stripes, pale eyebrow, streaked breast with central dark markings and conical bill match Song Sparrow; stylized marking proportions are retained.",
+      "figure_review": "Single right-facing sparrow, wings raised, feet curled and long tail extending down-left."
+    },
+    {
+      "slug": "catherpes-mexicanus-2",
+      "scientific_name": "Catherpes mexicanus",
+      "common_name": "Canyon Wren",
+      "source_sha256": "ebded0dfccf79fb19a04a584f81aa3c14b2c97900bf9a3774f528e87786914df",
+      "pixel_sha256": "4a906da0d2dec1ee2b9673f82c913f21514e77cb5217fc2f787d6f3c3f09d1a7",
+      "width": 583,
+      "height": 456,
+      "species_review": "Long slender curved bill, white throat, brown-gray head, rufous belly and barred tail match Canyon Wren.",
+      "figure_review": "Single left-facing wren with both wings extended, curled feet and barred tail."
+    },
+    {
+      "slug": "corvus-corax-2",
+      "scientific_name": "Corvus corax",
+      "common_name": "Common Raven",
+      "source_sha256": "2da3952cb8977820b87e968f817171803dfef705f4f884ea83da85ef72137ada",
+      "pixel_sha256": "49fbb4da986615430a3d61a862df287179993a65c7ac4e3700882ee5d505a284",
+      "width": 599,
+      "height": 957,
+      "species_review": "All-dark plumage, heavy bill, shaggy throat and long flight feathers support Common Raven in the upstream illustration; this is a stylized depiction, not a field-identification reference.",
+      "figure_review": "Single left-facing raven, open bill, opposing extended wings, curled feet and fanned tail."
+    },
+    {
+      "slug": "corvus-brachyrhynchos-2",
+      "scientific_name": "Corvus brachyrhynchos",
+      "common_name": "American Crow",
+      "source_sha256": "556b9c33f863a0de29f49f293fba1058ebd95c78b216b3d17c1225f29233ef9c",
+      "pixel_sha256": "46cf9fe568a1b9a1ff328e946e9c8832abdbee66807294e3c473a5b48b66aa2b",
+      "width": 711,
+      "height": 692,
+      "species_review": "Dark plumage, more moderate bill and smoother throat than the paired raven support the upstream American Crow identification; stylized differences are not a claim of forensic identification.",
+      "figure_review": "Single right-facing crow with two raised wings, two tucked feet and complete fanned tail."
+    },
+    {
+      "slug": "bubo-virginianus-2",
+      "scientific_name": "Bubo virginianus",
+      "common_name": "Great Horned Owl",
+      "source_sha256": "6c10112a58ba948d997dbb5d60ec873547c54abbb27b45c60e81feca0951d9b7",
+      "pixel_sha256": "065d45fc83b563f81165d651400af58afd1bc382c159d61d9c0c89ea1bf8af16",
+      "width": 718,
+      "height": 890,
+      "species_review": "Two ear tufts, yellow eyes, pale throat, barred underparts and feathered legs match Great Horned Owl.",
+      "figure_review": "Single owl descending with wings raised, head facing the viewer and both taloned feet visible."
+    },
+    {
+      "slug": "catharus-guttatus-2",
+      "scientific_name": "Catharus guttatus",
+      "common_name": "Hermit Thrush",
+      "source_sha256": "64535778fe1d6aea3b97cda6802c8f2c81c73436a8bb65c0db3d53f864d734b5",
+      "pixel_sha256": "027741a285c5fce95f6bf89144b329762c105cb3fb9585ea480251a38f2cb3d5",
+      "width": 659,
+      "height": 616,
+      "species_review": "White eye ring, brown back, dark-spotted pale throat/breast and contrasting rufous tail support Hermit Thrush.",
+      "figure_review": "Single left-facing thrush with both wings raised, visible dangling legs and full rufous tail."
+    },
+    {
+      "slug": "zenaida-macroura-2",
+      "scientific_name": "Zenaida macroura",
+      "common_name": "Mourning Dove",
+      "source_sha256": "0e1bdba5fba3c3963780382f3658026edfab07dc4667e89fc5091805b7363859",
+      "pixel_sha256": "f43501892f8a93db700a008f0fdd3419767eb4d239e857fb12417c2d940d29cd",
+      "width": 641,
+      "height": 548,
+      "species_review": "Slender dark bill, peach-tan breast, dark wing/cheek spots and long pointed pale-edged tail match Mourning Dove.",
+      "figure_review": "Single left-facing dove with both wings spread, curled feet and a complete pointed tail."
+    },
+    {
+      "slug": "accipiter-cooperii-2",
+      "scientific_name": "Accipiter cooperii",
+      "common_name": "Cooper's Hawk",
+      "source_sha256": "e7c5dc0b287736ddd40712f790c9c8249b63571c0848ecd8e972cc55e5c93d8c",
+      "pixel_sha256": "21c88cb36abf48caddf47fcaa68859a8d8f0006636902e04e24959d964cf7442",
+      "width": 548,
+      "height": 660,
+      "species_review": "Red eye, blue-gray upperparts, rusty-barred breast, long rounded barred tail and yellow feet match the upstream Cooper's Hawk figure. Accipiter cooperii is retained exactly as reported by the station; no taxonomic alias is introduced.",
+      "figure_review": "Single left-facing hawk with wings raised, two yellow taloned feet and long rounded barred tail."
+    }
+  ]
+}

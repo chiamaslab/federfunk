@@ -59,7 +59,8 @@ def publish_reason(previous, candidate, settings):
         return "selection"
     for name, bird in shown_after.items():
         earlier = shown_before[name]
-        if bird.get("artwork_id") != earlier.get("artwork_id"):
+        if (bird.get("artwork_id") != earlier.get("artwork_id")
+                or bool(bird.get("artwork_mirrored")) != bool(earlier.get("artwork_mirrored"))):
             return "artwork"
         if settings.get("show_names") and bird.get("common_name") != earlier.get("common_name"):
             return "labels"

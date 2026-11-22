@@ -1,4 +1,4 @@
-"""Optional, pinned historical artwork; downloads are explicit and outside Git.
+"""Optional, pinned reviewed artwork; downloads are explicit and outside Git.
 
 Only small reviewed allowlists in artwork/packs are accepted. Upstream code
 is never imported or executed. Verified WebP pixels or local contour recipes
@@ -21,6 +21,8 @@ from PIL import Image
 REGISTRY = Path(__file__).parent / "artwork" / "packs" / "registry.json"
 AUDUBON_REGISTRY = REGISTRY.with_name("audubon-public-domain-reviewed.json")
 NORTH_AMERICA_REGISTRY = REGISTRY.with_name("fugleramme-north-america-reviewed.json")
+HABIRD_REGISTRY = REGISTRY.with_name("habird-flight-reviewed.json")
+BATS_REGISTRY = REGISTRY.with_name("salt-lake-bats-reviewed.json")
 SUPPORT_REMOVALS = REGISTRY.with_name("support-removals-reviewed.json")
 MAX_BYTES = 8_000_000
 MAX_PIXELS = 8_000_000
@@ -28,6 +30,63 @@ MAX_SOURCE_BYTES = 80_000_000
 MAX_SOURCE_PIXELS = 200_000_000
 MAX_RECIPE_BYTES = 2_000_000
 AUDUBON_KIND = "audubon-contour-v1"
+HABIRD_KIND = "habird-flight-png-v1"
+BATS_KIND = "reviewed-local-png-v1"
+
+
+def _habird_pack():
+    """Expand a small native-PNG allowlist from the photo-matched collection."""
+    if not HABIRD_REGISTRY.is_file():
+        return None
+    if HABIRD_REGISTRY.stat().st_size > MAX_RECIPE_BYTES:
+        raise ValueError("Artwork registry exceeds its size limit")
+    data = json.loads(HABIRD_REGISTRY.read_text())
+    assets, defaults = data.pop("assets", None), data.pop("review_defaults", None)
+    if (data.pop("schema_version", None) != 1 or data.get("id") != "habird-flight-reviewed"
+            or data.get("kind") != HABIRD_KIND or not isinstance(defaults, dict)
+            or not isinstance(assets, list) or not 1 <= len(assets) <= 32):
+        raise ValueError("Unexpected flight artwork registry")
+    revision = data.get("revision", "")
+    if len(revision) != 40 or any(c not in "0123456789abcdef" for c in revision):
+        raise ValueError("Flight artwork is not pinned to a commit")
+    expanded = []
+    for compact in assets:
+        slug = compact.get("slug", "")
+        if (not slug.endswith("-2")
+                or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in slug)):
+            raise ValueError("Invalid flight artwork slug")
+        relative = f"avian/assets/illustrations/{slug}.png"
+        source = f"https://github.com/adamoberley/HABirdDashboard/blob/{revision}/{relative}"
+        expanded.append({
+            "id": f"habird-flight-{slug}",
+            "scientific_name": compact["scientific_name"], "common_name": compact["common_name"],
+            "title": "AvianVisitors / HABirdDashboard · flight illustration",
+            "variant": "In flight · Japanese print style (AI-generated)",
+            "creator": data["creator"], "date": "2026", "artwork_kind": "ai-generated", "pose": "flight",
+            "source_url": source, "upstream_url": source, "upstream_file": relative,
+            "source_sha256": compact["source_sha256"], "pixel_sha256": compact["pixel_sha256"],
+            "width": compact["width"], "height": compact["height"],
+            "rights": data["rights"], "rights_url": data["rights_url"],
+            "license_notice": data["license_notice"], "attribution": data["attribution"],
+            "attribution_url": data["attribution_url"], "changes": data["changes"],
+            "modifications": data["changes"],
+            "subject_geometry": {
+                "pixel_sha256": compact["pixel_sha256"], "size": [compact["width"], compact["height"]],
+                "polygons": [], "exclude": [],
+                "review": {"status": "reviewed", "date": defaults["date"],
+                           "scope": "Reviewed bird-only native alpha; no perch, ground or extra bird."},
+            },
+            "review": {
+                "status": "reviewed", "date": defaults["date"],
+                "species_check": compact["species_review"], "orientation": compact["figure_review"],
+                "crop": "Native PNG alpha composited on paper and inspected at full size: one complete flying bird, no support or adjacent bird. Source colors, orientation and alpha are unchanged.",
+                "scope": defaults["scope"],
+                "reviewed_source_sha256": compact["source_sha256"],
+                "reviewed_pixel_sha256": compact["pixel_sha256"],
+            },
+        })
+    data["assets"] = expanded
+    return data
 
 
 def cache_directory(cache_root=None):
@@ -123,6 +182,17 @@ def registered_packs():
         pack = json.loads(AUDUBON_REGISTRY.read_text())
         if pack.get("id") != "audubon-public-domain-reviewed" or pack.get("kind") != AUDUBON_KIND:
             raise ValueError("Unexpected Audubon artwork registry")
+        packs = [*packs, pack]
+    flight = _habird_pack()
+    if flight is not None:
+        packs = [*packs, flight]
+    if BATS_REGISTRY.is_file():
+        if BATS_REGISTRY.stat().st_size > MAX_RECIPE_BYTES:
+            raise ValueError("Bat artwork registry exceeds its size limit")
+        pack = json.loads(BATS_REGISTRY.read_text())
+        if (pack.get("schema_version") != 1 or pack.get("id") != "salt-lake-bats-reviewed"
+                or pack.get("kind") != BATS_KIND):
+            raise ValueError("Unexpected bat artwork registry")
         packs = [*packs, pack]
     return packs
 
@@ -341,8 +411,10 @@ def _publish_png(root, pack, entry, image):
     _cache_parent(root, output)
     from PIL.PngImagePlugin import PngInfo
     meta = PngInfo()
-    for key in ("attribution", "rights", "rights_url", "source_url", "changes"):
-        meta.add_text(key, str(entry[key]))
+    for key in ("attribution", "rights", "rights_url", "source_url", "changes",
+                "license_notice", "artwork_kind", "pose"):
+        if key in entry:
+            meta.add_text(key, str(entry[key]))
     with tempfile.NamedTemporaryFile(dir=output.parent, suffix=".png", delete=False) as temporary:
         temporary_path = Path(temporary.name)
     try:
@@ -353,6 +425,42 @@ def _publish_png(root, pack, entry, image):
         temporary_path.replace(output)
     finally:
         temporary_path.unlink(missing_ok=True)
+
+
+def _install_bats(pack, root):
+    """Install committed, individually reviewed derivatives without a download.
+
+    Historical source hashes and edit prompts document the originals. The
+    stored PNG and decoded pixels bind the reviewed AI-assisted extraction.
+    """
+    entries = pack.get("assets")
+    if not isinstance(entries, list) or not 1 <= len(entries) <= 32:
+        raise ValueError("Artwork pack exceeds the bounded allowlist limit")
+    revision = _digest("\n".join(entry["prepared_sha256"] for entry in entries).encode())
+    if pack.get("revision") != revision:
+        raise ValueError("Bat artwork revision does not match reviewed PNGs")
+    verified = []
+    for entry in entries:
+        relative = entry.get("prepared_file", "")
+        if not relative.startswith("edits/bats/") or not relative.endswith(".png"):
+            raise ValueError("Only reviewed local bat PNGs may be imported")
+        path = _safe(BATS_REGISTRY.parent, relative)
+        with path.open("rb") as source:
+            data = source.read(MAX_BYTES + 1)
+        review = entry.get("review", {})
+        if (review.get("status") != "reviewed"
+                or review.get("reviewed_source_sha256") != entry.get("source_sha256")
+                or review.get("reviewed_pixel_sha256") != entry.get("pixel_sha256")
+                or review.get("reviewed_sha256") != entry.get("prepared_sha256")
+                or _digest(data) != entry["prepared_sha256"]):
+            raise ValueError("Bat artwork does not match its source and pixel review")
+        image = _image(data, entry, "PNG")
+        if image.getchannel("A").getextrema() != (0, 255):
+            raise ValueError("Bat artwork needs reviewed transparent alpha")
+        verified.append((entry, image))
+    for entry, image in verified:
+        _publish_png(root, pack, entry, image)
+    return len(verified)
 
 
 def install_pack(pack_id, cache_root=None, source_directory=None):
@@ -372,16 +480,22 @@ def install_pack(pack_id, cache_root=None, source_directory=None):
     opener = urllib.request.build_opener(_NoRedirect())
     if pack.get("kind") == AUDUBON_KIND:
         return _install_audubon(pack, root, opener, source_directory)
+    if pack.get("kind") == BATS_KIND:
+        return _install_bats(pack, root)
     if len(pack["revision"]) != 40 or any(c not in "0123456789abcdef" for c in pack["revision"]):
         raise ValueError("Pack is not pinned to an exact revision")
     if len(pack["assets"]) > 32:
         raise ValueError("Artwork pack exceeds the bounded allowlist limit")
+    flight = pack.get("kind") == HABIRD_KIND
+    prefix, suffix, image_format, repository = (
+        ("avian/assets/illustrations/", ".png", "PNG", "adamoberley/HABirdDashboard") if flight else
+        ("assets/artwork/classic/birds/", ".webp", "WEBP", "arnegiacomo/fugleramme"))
     installed = 0
     for entry in pack["assets"]:
         if entry.get("review", {}).get("status") != "reviewed":
             raise ValueError("Pack contains unreviewed artwork")
         relative = entry["upstream_file"]
-        if not relative.startswith("assets/artwork/classic/birds/") or not relative.endswith(".webp"):
+        if not relative.startswith(prefix) or not relative.endswith(suffix):
             raise ValueError("Only allowlisted bird images may be imported")
         if ".." in PurePosixPath(relative).parts or any(c in relative for c in "?\\#"):
             raise ValueError("Unsafe upstream artwork path")
@@ -390,12 +504,14 @@ def install_pack(pack_id, cache_root=None, source_directory=None):
             with path.open("rb") as stream:
                 data = stream.read(MAX_BYTES + 1)
         else:
-            url = f"https://raw.githubusercontent.com/arnegiacomo/fugleramme/{pack['revision']}/{relative}"
+            url = f"https://raw.githubusercontent.com/{repository}/{pack['revision']}/{relative}"
             with opener.open(urllib.request.Request(url, headers={"User-Agent": "Federfunk-reviewed-artwork/1"}), timeout=30) as response:
                 data = response.read(MAX_BYTES + 1)
         if _digest(data) != entry["source_sha256"]:
             raise ValueError("Source artwork hash mismatch")
-        image = _image(data, entry, "WEBP")
+        image = _image(data, entry, image_format)
+        if flight and image.getchannel("A").getextrema() != (0, 255):
+            raise ValueError("Flight artwork needs reviewed transparent alpha")
         _publish_png(root, pack, entry, image)
         installed += 1
     return installed

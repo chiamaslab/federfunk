@@ -52,6 +52,8 @@ class AudubonPackTests(unittest.TestCase):
         self.save_metadata()
         self.cache = self.root/'external-cache'
         for context in (patch.object(packs,'registry',return_value=[]),patch.object(packs,'AUDUBON_REGISTRY',self.registry_path),
+                        patch.object(packs,'HABIRD_REGISTRY',self.metadata/'no-flight-pack.json'),
+                        patch.object(packs,'BATS_REGISTRY',self.metadata/'no-bat-pack.json'),
                         patch.dict(sys.modules,{'contour_artwork':types.SimpleNamespace(build_cutout=self.build)})):
             context.start()
             self.addCleanup(context.stop)

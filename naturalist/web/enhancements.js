@@ -123,7 +123,7 @@
       const grid=el("div","bird-detail-grid");
       const selectedId=data.print_artwork_id;
       const artwork=data.artworks?.find(a=>a.id===selectedId) || data.artworks?.[0];
-      if(artwork){const image=el("img","bird-portrait");image.alt=data.common_name;image.src="/artwork/"+encodeURIComponent(artwork.id)+".png";grid.append(image);}
+      if(artwork){const image=el("img","bird-portrait");image.alt=data.common_name;image.src="/artwork/"+encodeURIComponent(artwork.id)+".png";if(artwork.display_mirrored)image.style.transform="scaleX(-1)";grid.append(image);}
       const notes=el("div");const facts=el("dl","detail-facts");
       fact(facts,"Detections in this print",nf.format(data.daily?.print_count ?? data.daily?.count ?? 0));
       fact(facts,"Lifetime detections",data.lifetime ? nf.format(data.lifetime.count) : "—");

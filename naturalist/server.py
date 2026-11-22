@@ -483,9 +483,12 @@ class Feed:
                 if settings.get("classic_media", "photos") == "drawings":
                     selected = render.choose_birds([featured], settings, self.assets, date=date)
                     if selected:
+                        selected = [(bird, render.artwork_for_display(asset, settings, date)) for bird, asset in selected]
                         credit = public_asset(selected[0][1])
                         with Image.open(asset_path(selected[0][1], self.artwork_dir)) as source:
                             picture = source.convert("RGBA")
+                        if selected[0][1]["display_mirrored"]:
+                            picture = picture.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
                 elif not self.demo:
                     picture, credit = (photo_fetch or classic.photo)(self.base, featured["scientific_name"])
                     credit = {**credit, "common_name": featured["common_name"],
@@ -588,8 +591,10 @@ class Feed:
         canvas, selected, displayed, photo_credits = self._compose(birds, date, settings)
         frame, preview = render.pack(canvas)
         selected_ids = {b["scientific_name"]: a["id"] for b, a in selected}
+        mirrored = {b["scientific_name"]: bool(a.get("display_mirrored")) for b, a in selected}
         available = {a["scientific_name"] for a in self.assets}
         stats = dict(date=date, species=[{**b, "artwork_id": selected_ids.get(b["scientific_name"]),
+                                         "artwork_mirrored": mirrored.get(b["scientific_name"], False),
                                          "illustrated": b["scientific_name"] in displayed,
                                          "displayed": b["scientific_name"] in displayed,
                                          "artwork_available": b["scientific_name"] in available} for b in birds],

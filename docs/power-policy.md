@@ -1,7 +1,8 @@
 # Firmware power policy
 
-Prepared on October 26, 2026. The implementation requires both firmware profile
-builds and an authorized upload before it can affect a physical frame.
+The firmware implements the power policy below. Installing it on a physical
+frame requires the matching profile build and an owner-authorized upload.
+Shared firmware changes require both profile builds.
 
 The normal update closes the final HTTP transfer, finishes any necessary cache
 recovery, and turns Wi-Fi off before refreshing the panel. A conditional 304

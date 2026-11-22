@@ -1,8 +1,8 @@
-# Dashboard refresh interval: next firmware release
+# Dashboard refresh interval
 
-Prepared locally on 2026-10-22. This firmware support has **not been flashed**
-to the frame. Local dashboard previews do not change the deployed firmware,
-wake the display, or change the ongoing battery recorder.
+The firmware supports a daytime sleep interval supplied by the companion
+dashboard. Device capability telemetry distinguishes compatible firmware from
+older builds that retain their compiled interval.
 
 ## Protocol
 
@@ -52,17 +52,17 @@ wakes the frame.
 
 ## Rollout and verification
 
-Deploy the compatible companion separately and preserve the default 30-minute
-setting. Schedule a firmware update with the owner when hardware access is
-authorized; this preparation does not authorize flashing or resetting it.
-After that update, the capability header identifies support at the next
-ordinary request. Older firmware ignores the new response header and retains
-its compiled interval, so the dashboard must distinguish a saved preference
-from confirmed firmware support.
+Deploy a compatible companion and firmware build, using the supported
+hardware setup procedure and owner-authorized upload. The project default is
+30 minutes. The capability header identifies support at the next ordinary
+request. Older firmware ignores the response header and retains its compiled
+interval, so the dashboard distinguishes a saved preference from confirmed
+firmware support.
 
 Local checks cover valid bounds, malformed/overflow values, success/failure
 gating, conditional responses, retries, overnight precedence, per-wake reset
-and 64-bit timer arithmetic. Both PlatformIO profiles must build. Physical
-verification remains pending: confirm the chosen sleep in a boot log and the
-next normal check-in, then check the failure fallback and overnight resume.
+and 64-bit timer arithmetic. Both PlatformIO profiles must build after
+shared firmware changes. For a hardware installation, confirm the chosen
+sleep in a boot log and the next normal check-in, then check the failure
+fallback and overnight resume.
 No power-saving or elapsed-runtime claim follows from host tests alone.

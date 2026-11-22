@@ -42,6 +42,30 @@ status input cleanup and default 30-minute interval are preserved. The code does
 alter charger configuration, eFuses, flash/PSRAM power modes, or undocumented
 power-control pins.
 
+## Converter, USB and charger circuitry
+
+The published schematic identifies U5 as a TPS63020 buck-boost converter.
+Its PS/SYNC input selects forced fixed-frequency PWM when HIGH and power-save
+operation when LOW. Check the actual board revision and pin voltage when
+investigating standby draw. This is a hardware input, outside the firmware's
+audio and display shutdown sequence. See the [TI TPS63020 datasheet](https://www.ti.com/lit/ds/symlink/tps63020.pdf).
+
+The schematic connects VDDUSB to VSYS, which can be supplied by the battery
+through Q7. M2A/M2B provide the USB circuitry's 3V3_OP supply for the CH334 hub
+and CH343 serial bridge. The CH343 VBUS sense also uses VDDUSB. Disconnecting
+the external USB cable therefore does not establish that these chips have
+lost power. Their contribution to battery standby current remains unmeasured.
+Measure at the battery input with external USB disconnected to assess it.
+These connections come from the [Waveshare driver-board schematic](https://files.waveshare.com/wiki/ESP32-S3-ePaper-13.3E6/ESP32-S3-ePaper-Driver-Board.pdf).
+
+U7 is the ETA6098 charger. The published R80 value is 820 kOhm, corresponding
+to about 200 mA charging current. A larger battery does not change that
+resistor-selected rate. GPIO38 reads the charger's STAT output, while the
+firmware voltage guard controls update load. Charge-current changes require
+checking the actual board and the battery manufacturer's permitted current.
+See the [Waveshare schematic](https://files.waveshare.com/wiki/ESP32-S3-ePaper-13.3E6/ESP32-S3-ePaper-Driver-Board.pdf)
+and [ETA6098 datasheet](https://www.eta-semi.com/wp-content/uploads/2022/03/ETA6098_V1.1.pdf).
+
 ## Hardware verification still required
 
 1. The 2026-10-14 large-profile test captured `Audio shutdown: ES8311 confirmed;

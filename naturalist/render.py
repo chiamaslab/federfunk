@@ -23,7 +23,8 @@ DEFAULTS = dict(show_names=False, show_scientific=False, show_counts=False,
                 show_title=True, show_qr=True, show_all=True, scale="log", max_birds=8,
                 style="collage", classic_media="photos", orientation="portrait", refresh_interval_minutes=30,
                 stop_voltage=3.3, update_mode="every_check", meaningful_max_minutes=180, meaningful_change_percent=10,
-                dashboard_url="http://localhost:8001/", variants={}, variant_mode="daily", schedule=DEFAULT_SCHEDULE)
+                dashboard_url="http://localhost:8001/", variants={}, variant_mode="daily",
+                mirror_mode="original", mirror_overrides={}, schedule=DEFAULT_SCHEDULE)
 
 
 def catalogue(directory=None, pack_directory=None):
@@ -77,6 +78,14 @@ def validate_settings(patch, current, assets):
         raise ValueError("Choose photos or historical drawings for the classic display")
     if settings["variant_mode"] not in ("daily", "fixed"):
         raise ValueError("Choose daily or fixed artwork variations")
+    if settings["mirror_mode"] not in ("original", "daily"):
+        raise ValueError("Choose original or random daily image directions")
+    directions = settings["mirror_overrides"]
+    species = {asset["scientific_name"] for asset in assets}
+    if (not isinstance(directions, dict) or len(directions) > len(species)
+            or any(name not in species or mode not in ("original", "mirrored", "daily")
+                   for name, mode in directions.items())):
+        raise ValueError("Invalid per-bird image direction")
     url = settings["dashboard_url"]
     if not isinstance(url, str) or len(url) > 200:
         raise ValueError("Dashboard URL must be at most 200 characters")
@@ -159,6 +168,23 @@ def choose_birds(birds, settings, assets, date=None):
     return chosen
 
 
+def artwork_for_display(asset, settings, date=None):
+    """Record a daily, independent reflection without changing source assets."""
+    mode = settings.get("mirror_overrides", {}).get(
+        asset["scientific_name"], settings.get("mirror_mode", "original"))
+    seed = f'mirror-v1\0{observation_day(date, settings).isoformat()}\0{asset["id"]}'
+    mirrored = mode == "mirrored" or (mode == "daily" and bool(hashlib.sha256(seed.encode()).digest()[0] & 1))
+    result = {**asset, "display_mirrored": mirrored,
+              "display_transform": "horizontal_mirror" if mirrored else "original"}
+    if mirrored:
+        original_changes = asset.get("changes", asset.get("modifications", ""))
+        if isinstance(original_changes, list):
+            original_changes = "; ".join(str(value) for value in original_changes)
+        result["changes"] = (str(original_changes) + " Display: horizontally mirrored for composition; source file unchanged.").strip()
+        result["modifications"] = result["changes"]
+    return result
+
+
 def compose(birds, settings, assets, artwork_dir=None, date=None):
     from artwork_packs import asset_path
     from subject_geometry import subject_area, subject_bounds
@@ -169,7 +195,8 @@ def compose(birds, settings, assets, artwork_dir=None, date=None):
     draw = ImageDraw.Draw(canvas)
     if settings["show_title"]:
         centered(draw, "H E A R D   T O D A Y", width / 2, height * .12, width * .7, 30)
-    selected = choose_birds(birds, settings, assets, date=date)
+    selected = [(bird, artwork_for_display(asset, settings, date))
+                for bird, asset in choose_birds(birds, settings, assets, date=date)]
     if not selected:
         centered(draw, "Listening for visitors", width / 2, height / 2, width * .7, 26, True)
     # All birds share one length multiplier. Reviewed bird-only area excludes
@@ -178,11 +205,15 @@ def compose(birds, settings, assets, artwork_dir=None, date=None):
     for bird, asset in selected:
         with Image.open(asset_path(asset, artwork_dir)) as original:
             image = original.convert("RGBA")
-        bounds = image.getbbox()
-        if not bounds:
+        if not image.getbbox():
             continue
         ink_area = subject_area(asset, image)
         body_bounds = subject_bounds(asset, image)
+        if asset["display_mirrored"]:
+            image = image.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+            left, top, right, bottom = body_bounds
+            body_bounds = (image.width-right, top, image.width-left, bottom)
+        bounds = image.getbbox()
         image = image.crop(bounds)
         unit = math.sqrt(area_weight(bird["count"], settings["scale"]) / max(1, ink_area))
         items.append(dict(bird=bird, asset=asset, image=image,
@@ -220,7 +251,7 @@ def compose(birds, settings, assets, artwork_dir=None, date=None):
     add_qr(canvas, settings)
     attribution = []
     for _, asset in selected:
-        attribution.append({key: asset.get(key) for key in ("title", "creator", "date", "source_url", "rights", "rights_url", "attribution")})
+        attribution.append({key: asset.get(key) for key in ("title", "creator", "date", "source_url", "rights", "rights_url", "attribution", "license_notice", "changes", "display_mirrored", "display_transform")})
     canvas.info["Artwork sources"] = json.dumps(attribution, ensure_ascii=False)
     add_print_rights(canvas, [asset for _, asset in selected])
     canvas.info["Bird hotspots"] = hotspots
@@ -267,7 +298,8 @@ def bird_hotspot(item, placement, image):
     right, bottom = min(width, round(right*sx)), min(height, round(bottom*sy))
     return dict(scientific_name=item["bird"]["scientific_name"],
                 common_name=item["bird"].get("common_name", item["bird"]["scientific_name"]),
-                artwork_id=item["asset"]["id"], x=x, y=y, width=width, height=height,
+                artwork_id=item["asset"]["id"], artwork_mirrored=bool(item["asset"].get("display_mirrored")),
+                x=x, y=y, width=width, height=height,
                 subject=dict(x=x+left, y=y+top, width=max(1, right-left), height=max(1, bottom-top)),
                 alpha_mask=dict(width=mw, height=mh, rows=rows))
 

@@ -112,8 +112,68 @@ class PackTests(unittest.TestCase):
             self.assertEqual(packs.packs_status(self.cache)[0]["status"], "not-installed")
         self.assertFalse(self.cache.exists())
 
+    def flight_source(self, opaque=False):
+        image = Image.new("RGBA", (12, 10), (0, 0, 0, 255 if opaque else 0))
+        image.paste((80, 120, 160, 255), (2, 2, 10, 8))
+        buffer = io.BytesIO()
+        image.save(buffer, format="PNG")
+        self.source = buffer.getvalue()
+        self.pack["kind"] = packs.HABIRD_KIND
+        self.entry.update(upstream_file="avian/assets/illustrations/test-bird-2.png",
+                          source_sha256=hashlib.sha256(self.source).hexdigest(),
+                          pixel_sha256=hashlib.sha256(image.tobytes()).hexdigest(),
+                          license_notice="MIT License; Copyright Example artist; permission retained",
+                          artwork_kind="ai-generated", pose="flight")
+        path = self.source_root / self.entry["upstream_file"]
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(self.source)
+        return image
+
+    def test_native_flight_png_keeps_pixels_and_full_license_notice(self):
+        original = self.flight_source()
+        with patch.object(packs.urllib.request.OpenerDirector, "open", side_effect=AssertionError("No network")):
+            self.assertEqual(packs.install_pack("test", self.cache, self.source_root), 1)
+            asset, = packs.load_pack_assets(self.cache)
+        with Image.open(packs.asset_path(asset, self.root)) as image:
+            self.assertEqual(image.convert("RGBA").tobytes(), original.tobytes())
+            self.assertEqual(image.info["license_notice"], self.entry["license_notice"])
+            self.assertEqual(image.info["artwork_kind"], "ai-generated")
+            self.assertEqual(image.info["pose"], "flight")
+
+    def test_flight_source_is_bound_to_fixed_repository_and_revision(self):
+        self.flight_source()
+        with patch.object(packs.urllib.request.OpenerDirector, "open", return_value=io.BytesIO(self.source)) as fetch:
+            self.assertEqual(packs.install_pack("test", self.cache), 1)
+        self.assertEqual(fetch.call_args.args[0].full_url,
+            "https://raw.githubusercontent.com/adamoberley/HABirdDashboard/" + "a"*40 +
+            "/avian/assets/illustrations/test-bird-2.png")
+
+    def test_flight_source_rejects_opaque_background_and_non_artwork_paths(self):
+        self.flight_source(opaque=True)
+        with self.assertRaisesRegex(ValueError, "transparent alpha"):
+            packs.install_pack("test", self.cache, self.source_root)
+        self.entry["upstream_file"] = "avian/scripts/pregen.py"
+        with self.assertRaisesRegex(ValueError, "allowlisted bird images"):
+            packs.install_pack("test", self.cache, self.source_root)
+
 
 class RegistryTests(unittest.TestCase):
+    def test_flight_registry_is_reviewed_attributed_and_explicitly_generated(self):
+        pack = next(p for p in packs.registered_packs() if p["id"] == "habird-flight-reviewed")
+        self.assertEqual(len(pack["assets"]), 11)
+        self.assertEqual(pack["rights"], "MIT")
+        self.assertIn("Copyright (c) 2026 Adam Oberley, Teddy Warner", pack["license_notice"])
+        self.assertNotIn("Poecile gambeli", {a["scientific_name"] for a in pack["assets"]})
+        for entry in pack["assets"]:
+            self.assertEqual(entry["artwork_kind"], "ai-generated")
+            self.assertEqual(entry["pose"], "flight")
+            self.assertEqual(entry["review"]["status"], "reviewed")
+            self.assertEqual(entry["review"]["reviewed_source_sha256"], entry["source_sha256"])
+            self.assertEqual(entry["review"]["reviewed_pixel_sha256"], entry["pixel_sha256"])
+            self.assertIn(pack["revision"], entry["source_url"])
+            self.assertIn(pack["revision"], entry["rights_url"])
+            self.assertTrue(entry["license_notice"] and entry["attribution"])
+
     def test_actual_registry_has_only_pinned_individually_reviewed_assets(self):
         entries = []
         for pack in packs.registry():

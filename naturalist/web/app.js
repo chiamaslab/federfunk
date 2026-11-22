@@ -13,11 +13,12 @@
     show_names: false, show_scientific: false, show_counts: false,
     show_title: true, show_qr: true, show_all: true, scale: "log", max_birds: 8,
     style: "collage", classic_media: "photos", orientation: "portrait", dashboard_url: "", variants: {}, variant_mode: "daily",
+    mirror_mode: "original", mirror_overrides: {},
     refresh_interval_minutes: 30,
     stop_voltage: 3.3, update_mode: "every_check", meaningful_change_percent: 10, meaningful_max_minutes: 180,
   };
   let currentState = null;
-  let draft = { ...defaults, variants: {}, schedule: scheduleSettings() };
+  let draft = { ...defaults, variants: {}, mirror_overrides: {}, schedule: scheduleSettings() };
   let csrfToken = "";
   let dirty = false;
   let saving = false;
@@ -192,8 +193,9 @@
     byId("classic_media").disabled = !classic;
     byId("scale").disabled = classic;
     byId("scale").closest(".field").hidden = classic;
-    byId("variant-section").hidden = classic || !byId("variant-fields").children.length;
-    for (const select of byId("variant-fields").querySelectorAll("select")) select.disabled = classic;
+    const photos = classic && draft.classic_media !== "drawings";
+    byId("variant-section").hidden = photos || !byId("variant-fields").children.length;
+    for (const select of byId("variant-fields").querySelectorAll("select")) select.disabled = photos;
     byId("qr-settings").hidden = !draft.show_qr;
     byId("dashboard_url").required = draft.show_qr;
     byId("max-birds-value").value = draft.max_birds;
@@ -235,9 +237,10 @@
 
   function presentationSettings() {
     const settings = {};
-    for (const key of [...booleans, "classic_media", "scale", "max_birds", "orientation", "variant_mode", "dashboard_url"])
+    for (const key of [...booleans, "classic_media", "scale", "max_birds", "orientation", "variant_mode", "mirror_mode", "dashboard_url"])
       settings[key] = draft[key];
     settings.variants = { ...draft.variants };
+    settings.mirror_overrides = { ...draft.mirror_overrides };
     return settings;
   }
 
@@ -339,6 +342,7 @@
     draft.classic_media = byId("classic_media").value;
     draft.scale = byId("scale").value;
     draft.variant_mode = byId("variant_mode").value;
+    draft.mirror_mode = byId("mirror_mode").value;
     draft.orientation = byId("orientation").value;
     draft.max_birds = Number(byId("max_birds").value);
     draft.dashboard_url = byId("dashboard_url").value.trim();
@@ -368,17 +372,21 @@
         time: byId(`schedule_${boundary}_time`).value,
       };
     }
-    for (const select of byId("variant-fields").querySelectorAll("select")) {
+    for (const select of byId("variant-fields").querySelectorAll("select[data-species]")) {
       if (select.value) draft.variants[select.dataset.species] = select.value;
       else delete draft.variants[select.dataset.species];
+    }
+    for (const select of byId("variant-fields").querySelectorAll("select[data-mirror-species]")) {
+      if (select.value) draft.mirror_overrides[select.dataset.mirrorSpecies] = select.value;
+      else delete draft.mirror_overrides[select.dataset.mirrorSpecies];
     }
     updateFormHelp();
   }
 
   function fillForm(settings) {
-    draft = { ...defaults, ...settings, variants: { ...(settings?.variants || {}) }, schedule: scheduleSettings(settings?.schedule) };
+    draft = { ...defaults, ...settings, variants: { ...(settings?.variants || {}) }, mirror_overrides: { ...(settings?.mirror_overrides || {}) }, schedule: scheduleSettings(settings?.schedule) };
     for (const name of booleans) byId(name).checked = Boolean(draft[name]);
-    for (const name of ["style", "classic_media", "scale", "orientation", "max_birds", "dashboard_url", "variant_mode", "stop_voltage", "update_mode", "meaningful_change_percent", "meaningful_max_minutes"]) byId(name).value = draft[name];
+    for (const name of ["style", "classic_media", "scale", "orientation", "max_birds", "dashboard_url", "variant_mode", "mirror_mode", "stop_voltage", "update_mode", "meaningful_change_percent", "meaningful_max_minutes"]) byId(name).value = draft[name];
     byId("refresh_interval").value = [30, 60, 120].includes(draft.refresh_interval_minutes)
       ? String(draft.refresh_interval_minutes) : "custom";
     byId("refresh_interval_minutes").value = draft.refresh_interval_minutes;
@@ -411,7 +419,7 @@
     const assets = catalogue(state);
     for (const species of state.stats?.species || []) {
       const choices = assets.filter((artwork) => artworkSpecies(artwork) === species.scientific_name && artworkId(artwork));
-      if (choices.length < 2) continue;
+      if (!choices.length) continue;
       const field = node("div", "field");
       const id = `artwork-variant-${container.children.length}`;
       const label = node("label", "", species.common_name || species.scientific_name);
@@ -428,11 +436,22 @@
         select.append(option);
       }
       select.value = draft.variants[species.scientific_name] || "";
-      select.disabled = draft.style === "classic";
+      select.disabled = draft.style === "classic" && draft.classic_media !== "drawings";
       field.append(label, select);
+      const direction = node("select");
+      direction.dataset.mirrorSpecies = species.scientific_name;
+      direction.id = `${id}-direction`;
+      const directionLabel = node("label", "", "Image direction");
+      directionLabel.htmlFor = direction.id;
+      for (const [value, title] of [["", "Use default above"], ["original", "Original"], ["mirrored", "Mirrored left / right"], ["daily", "Random each day"]]) {
+        const option = node("option", "", title); option.value = value; direction.append(option);
+      }
+      direction.value = draft.mirror_overrides[species.scientific_name] || "";
+      direction.disabled = select.disabled;
+      field.append(directionLabel, direction);
       container.append(field);
     }
-    byId("variant-section").hidden = draft.style === "classic" || !container.children.length;
+    byId("variant-section").hidden = (draft.style === "classic" && draft.classic_media !== "drawings") || !container.children.length;
   }
 
   function hourlyValues(species) {

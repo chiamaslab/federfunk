@@ -232,7 +232,7 @@ resizing, cropping, dithering, or allocating another full framebuffer.
 
 ### Unchanged images
 
-At each 30-minute wake, FederFunk checks whether an update is needed:
+At each scheduled wake, FederFunk checks whether an update is needed:
 
 - If the server supplied an `ETag` for the last successfully displayed image,
   the next request sends `If-None-Match`. A `304 Not Modified` skips both the
@@ -249,7 +249,9 @@ both sizes and both JPEG and `.bin` URLs; no new configuration is required.
 A manual reset, power loss, or firmware upload forces a fresh download and
 refresh. Failed downloads don't become the new reference image, and a failed
 panel refresh invalidates the reference so the next attempt repairs it.
-Both unchanged and failed updates still end with the normal sleep interval.
+Successful unchanged updates use the selected sleep interval. Consecutive
+failed updates retry after 30, 60, then 120 minutes, with 120 minutes as the
+continuing maximum. See the [power policy](docs/power-policy.md).
 
 Serial output says
 `Image and battery indicator unchanged; skipping e-paper refresh.`
@@ -294,8 +296,10 @@ because STAT can also assert without a battery. This code reads the status
 only and does not change charger settings. Status is sampled at each wake,
 not continuously during the sleep interval, and never changes frame pixels.
 
-Battery is sampled once each wake, before Wi-Fi and panel power are enabled,
-using 32 samples with outliers removed. A voltage change alone does not
+Battery voltage is sampled before Wi-Fi and panel power are enabled, using
+32 samples with outliers removed. The voltage guard takes a second independent
+trimmed reading to confirm a low-voltage pause or recovery from that pause.
+A voltage change alone does not
 trigger refresh: only a change to the visible badge does. Percentages are
 whole-percent estimates; the trimmed sampling reduces occasional ADC noise.
 An invalid reading retains the previous indicator, not a fabricated 0%.
@@ -316,8 +320,9 @@ that cache and redraws it with the current badge. Removing the warning
 restores the original pixels, not a white rectangle. A missing/corrupt cache
 forces a full download. During network failures, a verified cache from the
 last successful display can still show a battery change; the network failure
-is logged and the normal 30-minute sleep remains. This fallback requires a
-previous successful update in the current power session.
+is logged and the 30/60/120-minute failure backoff still applies. The
+[voltage guard](docs/power-policy.md) takes priority over badge updates. This
+fallback requires a previous successful update in the current power session.
 
 Percentage is only a voltage-based estimate, **not a fuel-gauge measurement**.
 `emptyVoltage` (3.3 V) and `fullVoltage` (4.2 V) set its linear scale; adjust
@@ -419,10 +424,12 @@ in flash. That milestone can add:
    interval;
 5. validation and atomic saving before rebooting into station mode.
 
-For now these settings are compiled into the firmware. There is no Wi-Fi
-setup access point or configuration website yet. Changes to SSID, URL, or
-sleep interval require another build/upload. The interval is a sleep duration
-after each attempt, so refresh and download time are added to it.
+SSID, password and image URL remain compiled into the firmware and require
+a build/upload to change. The companion dashboard can select the daytime
+sleep interval on [supporting firmware](docs/refresh-interval.md). There is no
+on-device Wi-Fi setup access point or captive configuration page. The interval
+is a sleep duration after a successful update, so refresh and download time
+are added to it. Failed requests use the bounded retry backoff.
 
 ## Troubleshooting
 
@@ -431,7 +438,7 @@ after each attempt, so refresh and download time are added to it.
 | USB port disappeared after an update | Expected during deep sleep. Hold BOOT, tap RESET/EN, release BOOT to enter the bootloader for another upload. |
 | No USB port, even after entering the bootloader | Try a known USB data cable and a direct computer port. Check OS device enumeration before installing a driver; use the board's actual USB identity. |
 | Board resets or cannot initialize PSRAM | Verify the real module/flash size. The integrated WROOM-2-N32R16V uses `opi_opi`; the existing small-board profile uses `qio_opi`. |
-| Wi-Fi times out | Verify private settings, 2.4 GHz connectivity, and signal. A failed attempt sleeps for the configured interval; RESET retries immediately. |
+| Wi-Fi times out | Verify private settings, 2.4 GHz connectivity, and signal. Consecutive failed wakes retry after 30, 60, then 120 minutes; RESET retries immediately. |
 | Unexpected Content-Length | A `.bin` response must be exactly 192,000 or 960,000 bytes for the selected profile. An HTML error/fallback page is not a frame, even with HTTP 200. |
 | HTTP request fails | Check the server's LAN address, port, firewall, and endpoint from the same network. Only `http://` is currently supported. |
 | JPEG is rejected or looks poor | Use a baseline JPEG, ideally the exact canvas size. A backend-dithered `.bin` avoids JPEG artifacts and firmware quantization entirely. |

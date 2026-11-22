@@ -97,6 +97,26 @@ selection avoid unnecessary refreshes within a day. The default daily drawing
 choice is deterministic for each date and species. A fixed automatic choice
 is also available, and a manual illustration choice always takes precedence.
 
+Under **Illustration choices → Left / right variety**, choose **Random
+directions each day** for an independent, evenly distributed daily reflection
+of each selected illustration. The local observation date and stable artwork
+ID determine the choice, so changing counts, reordering birds, repeated
+checks and restarts do not reroll it. Each bird also has an **Image direction**
+override: use the default, keep Original, force Mirrored, or choose Random
+each day. The project default is Original; the owner requested daily mirroring
+for this installation. Classic photographs retain their original direction.
+
+Mirroring reverses pixel columns before the existing resize and colour
+conversion; it introduces no resampling or invented detail of its own. It is
+a reflected drawing of the depicted side, not evidence of what the bird's
+opposite side looks like. Any asymmetric marks or embedded lettering would
+also reverse; choose Original where source orientation matters. Bird-only
+measurement bounds, layout silhouettes and click masks reflect with the
+image. Names, counts and QR codes are drawn afterwards and stay readable.
+Credits and saved print data record the displayed reflection separately from
+the unchanged source hashes. Daily history keeps its original saved images,
+and overnight changes wait for the next active window.
+
 ## Update interval and power savings
 
 Under Schedule, **Update every** offers 30, 60 or 120 minutes and Custom
@@ -242,6 +262,25 @@ remain in the external cache. Install it with
 The original poses and pigment are preserved, with no reconstructed anatomy.
 The cones held by the Pine Siskins are excluded from bird-area sizing.
 
+The optional `habird-flight-reviewed` pack adds eleven reviewed flying-bird
+variants from the AvianVisitors / HABirdDashboard family. These are explicitly
+labelled AI-generated Japanese-print-style illustrations, separate from the
+historical source plates. The pinned HABirdDashboard distribution licenses its
+artwork under MIT; full credit and permission notices stay in each PNG and
+the exported credits. Install with
+`.venv/bin/python artwork_packs.py habird-flight-reviewed`, then restart the
+companion. Existing images, manual choices and daily selection remain available.
+See [the flight pack's source and review notes](artwork/packs/README.md#flying-bird-illustrations).
+
+The optional `salt-lake-bats-reviewed` pack adds Little Brown, Hoary, Big Brown
+and Mexican/Brazilian Free-tailed Bat illustrations from public-domain
+historical sources. These are disclosed AI-assisted transparent extractions,
+with source hashes, edit prompts, taxonomy evidence and individual reviews.
+Install with `.venv/bin/python artwork_packs.py salt-lake-bats-reviewed`, then
+restart the companion. Exact scientific-name matching and the existing daily
+left/right settings apply. Installing artwork does not create detections.
+See [the bat sources and limitations](artwork/packs/README.md#salt-lake-area-bats).
+
 ## Field notes and daily archive
 
 Select a bird in the picture, or use its accessible button or species-list
@@ -301,7 +340,7 @@ with `--until-stopped`. Keep the original `--start` and output file: the
 recorder appends a window-change event and preserves all previous records.
 It does not stop automatically on silence, because expected overnight sleep
 and network failures cannot establish when a battery becomes empty. The
-32 MB log limit still applies. A service with automatic
+128,000,000-byte log limit still applies. A service with automatic
 restart can continue independently of a laptop, browser or chat. The home
 server and local Wi-Fi must remain powered; Internet access is not required.
 Long overnight gaps are expected when solar sleep is enabled.

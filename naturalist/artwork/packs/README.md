@@ -1,4 +1,4 @@
-# Optional historical artwork packs
+# Optional reviewed artwork packs
 
 `registry.json` is a small reviewed allowlist, not an automatic import of an
 upstream collection. The first pack contains nine individual birds from
@@ -141,6 +141,82 @@ the original artist, source and share-alike terms.
 The earlier pheasant source review was incorrect: it is left-facing and its
 source contains a background female. The source record now states that, and
 the displayed adaptation contains the foreground male alone.
+
+## Flying-bird illustrations
+
+`habird-flight-reviewed.json` adds eleven native transparent flight poses from
+the AvianVisitors / HABirdDashboard illustration family matched in the owner's
+reference photo: Black-capped Chickadee, Red-breasted Nuthatch, House Finch,
+Song Sparrow, Canyon Wren, Common Raven, American Crow, Great Horned Owl,
+Hermit Thrush, Mourning Dove and Cooper's Hawk. These are **upstream
+AI-generated Japanese-print-style illustrations**, not historical plates.
+The existing drawings and the owner's selection mode remain available.
+
+The selected source is HABirdDashboard commit
+`3f3e2e78aa6537a58a51df05ac4b34dcdb118733`. Its README explicitly licenses both
+code and artwork under MIT with the agreement of Teddy Warner and contributors.
+The separate AvianVisitors repository still states CC BY-NC-SA; this pack uses
+the explicitly MIT-licensed HABirdDashboard distribution. Each entry includes
+the pinned source, attribution, full MIT copyright/permission notice, file
+and RGBA hashes, and a dated visual review. Native color and alpha pixels are
+unchanged; the installer adds attribution/licence metadata only. No upstream
+code, species-label list, taxonomy table or generation pipeline is imported.
+
+```sh
+.venv/bin/python artwork_packs.py habird-flight-reviewed
+```
+
+Scientific names match the station's reported labels. Flight and sex variants
+are artistic choices, never conclusions drawn from detection confidence.
+The reviewed Mountain Chickadee candidate was rejected because it lacked the
+diagnostic white eyebrow. This is an eleven-figure review, not approval of the
+whole upstream collection. Only reviewed native PNGs with transparent alpha
+are admitted; source images stay in the external pack cache.
+
+Source and terms: [pinned artwork](https://github.com/adamoberley/HABirdDashboard/tree/3f3e2e78aa6537a58a51df05ac4b34dcdb118733/avian/assets/illustrations),
+[credits and artwork licence](https://github.com/adamoberley/HABirdDashboard/blob/3f3e2e78aa6537a58a51df05ac4b34dcdb118733/README.md#credits--license),
+[MIT notice](https://github.com/adamoberley/HABirdDashboard/blob/3f3e2e78aa6537a58a51df05ac4b34dcdb118733/LICENSE).
+
+## Salt Lake area bats
+
+`salt-lake-bats-reviewed.json` adds Little Brown Bat (*Myotis lucifugus*),
+Hoary Bat (*Lasiurus cinereus*), Big Brown Bat (*Eptesicus fuscus*), and
+Mexican/Brazilian Free-tailed Bat (*Tadarida brasiliensis*). These species are
+documented in the [Antelope Island mammal list](https://stateparks.utah.gov/parks/antelope-island/park-mammals/).
+Artwork availability does not add a detection or change the station's labels.
+Only an exact scientific-name match selects an image.
+
+```sh
+.venv/bin/python artwork_packs.py salt-lake-bats-reviewed
+```
+
+The four prepared PNGs in `edits/bats/` are **AI-assisted extractions from
+public-domain historical illustrations**, made with the built-in image editor
+on 2026-11-08. They are not untouched source-pixel crops. Each record stores
+the complete edit prompt, source URL and SHA-256, prepared file and RGBA
+hashes, taxonomy evidence, limitations, and a dated individual visual review.
+The installer verifies all four local files before publishing any, embeds
+their credits in the external cache, and performs no network download.
+The content revision is SHA-256 of the ordered prepared-file hashes.
+
+Seton's 1898 *Four-footed Americans and their kin* supplies the Little Brown
+Bat. De Kay's 1842 *Zoology of New York*, plate 2, supplies the Hoary Bat
+(lower figure 2, historically *Vespertilio pruinosus*) and Big Brown Bat
+(upper figure 1, historically the Carolina Bat, *V. carolinensis*). The
+historical synonym mappings have separate museum/species-account evidence.
+Both De Kay figures retain the source's foreshortened, fading right wing;
+missing portions were not extended. The complete *Nyctinomus brasiliensis*
+figure in University of Amsterdam's Iconographia Zoologica scan
+`UBA01 IZ20800059` supplies the free-tailed bat, with both wing tips and its
+projecting tail. Separate head/skull diagrams are excluded.
+
+A Fuertes candidate captioned "Hoary Bat" was rejected: the 1918 book's
+erratum explicitly identifies it as Little Brown Bat. A clipped 1847
+free-tailed figure and an overlapping Fuertes group were also rejected.
+The original downloaded scans are retained in the ignored preparation
+archive; their institutional URLs and exact hashes remain in the registry.
+The daily direction option and Original/Mirrored overrides also apply to
+these illustrations. No bat recording or historical print is synthesized.
 
 ## API and checks
 
